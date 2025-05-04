@@ -1,37 +1,48 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 
-export default function Trending() {
-    const API_KEY = import.meta.env.VITE_GIPHY_API_KEY;
+export default function Trending({ gifs }) {
+    const [trendingGifs, setTrendingGifs] = useState([]);
 
-    const [gifs, setGifs] = useState([]);
-
+    
     useEffect(() => {
-        const fetchGifs = async () => {
+        const fetchTrendingGifs = async () => {
             try {
-                const response = await fetch(`https://api.giphy.com/v1/gifs/trending?api_key=${API_KEY}&limit=25`);
+                const response = await fetch(
+                    `https://api.giphy.com/v1/gifs/trending?api_key=${import.meta.env.VITE_GIPHY_API_KEY}&limit=25`
+                );
                 const data = await response.json();
-                setGifs(data.data);
+                setTrendingGifs(data.data); 
             } catch (error) {
-                console.error('Error fetching gifs:', error);
+                console.error("Error fetching trending GIFs:", error);
             }
+        };
+
+       
+        if (gifs.length === 0) {
+            fetchTrendingGifs();
         }
+    }, [gifs]); 
 
-        fetchGifs();
-    }, []);
+    
 
+    const displayGifs = gifs.length > 0 ? gifs : trendingGifs;
 
     return (
         <div>
-            <h2>Trending GIFs</h2>
+            <h2>{gifs.length > 0 ? 'Search Results' : 'Trending GIFs'}</h2>
             <div className="trending-container">
-                {gifs.map((gif) => (
-                    <div className="trending-gif" key={gif.id}>
-                        <img
-                            src={gif.images.fixed_height.url}
-                            alt={gif.title}
-                        />
-                    </div>
-                ))}
+                {displayGifs.length === 0 ? (
+                    <p>No results found. Please search for GIFs.</p> 
+                ) : (
+                    displayGifs.map((gif) => (
+                        <div className="trending-gif" key={gif.id}>
+                            <img
+                                src={gif.images.fixed_height.url}
+                                alt={gif.title}
+                            />
+                        </div>
+                    ))
+                )}
             </div>
         </div>
     );
