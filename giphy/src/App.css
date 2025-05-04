@@ -221,7 +221,7 @@ nav a {
 }
 
 .more-options-button:hover {
-  background-color: rgba(120, 41, 188, 0.8);
+  background-color: rgba(168, 60, 136, 0.8);
 }
 
 
@@ -447,3 +447,13 @@ section {
 }
 
 
+
+.more-options-line {
+  width: 30px; 
+  height: 3px; 
+  background: linear-gradient(to right, #6328c3, #5e149b, #9933ff, #852ea3, #650d5d); /* Градиент */
+  margin: 0 auto; 
+  margin-top: 45px;
+  margin-left: -57px
+
+}
