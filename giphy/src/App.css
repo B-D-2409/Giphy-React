@@ -269,13 +269,13 @@ h2 {
 
 .create {
   color: #9933ff;
-  background: linear-gradient(to right, #28a745, #ffc107); /* зелен към жълт */
+  background: linear-gradient(to right, #28a745, #ffc107);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .artists-head {
-  background: linear-gradient(to right, #28a745, #ffc107); /* зелен към жълт */
+  background: linear-gradient(to right, #28a745, #ffc107); 
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -283,7 +283,7 @@ h2 {
 }
 
 .entertainment-head {
-  background: linear-gradient(to right, #28a745, #ffc107); /* зелен към жълт */
+  background: linear-gradient(to right, #28a745, #ffc107); 
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -291,7 +291,7 @@ h2 {
 }
 
 .sports-head {
-  background: linear-gradient(to right, #28a745, #ffc107); /* зелен към жълт */
+  background: linear-gradient(to right, #28a745, #ffc107); 
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -307,7 +307,7 @@ h2 {
 }
 
 .reactions-head {
-  background: linear-gradient(to right, #28a745, #ffc107); /* зелен към жълт */
+  background: linear-gradient(to right, #28a745, #ffc107);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -315,29 +315,36 @@ h2 {
 }
 
 .upload, .create {
-  background: linear-gradient(to right, #28a745, #ffc107); /* зелен към жълт */
+  background: linear-gradient(to right, #28a745, #ffc107); 
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-background-clip: text;
+  background-clip: text;
+  background-clip: text;
 }
 
 .upload:hover, .create:hover {
-  background: linear-gradient(to right, #9933ff, #3316ed); /* преминаване към друг цвят при hover */
+  background: linear-gradient(to right, #9933ff, #3316ed); 
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .artists-head, .entertainment-head, .sports-head, .stickers-head, .reactions-head {
-  background: linear-gradient(to right, #28a745, #ffc107); /* зелен към жълт */
-  -webkit-background-clip: text;
+  background: linear-gradient(to right, #28a745, #ffc107);
   -webkit-text-fill-color: transparent;
   background-clip: text;
   color: transparent;
 }
 
 .artists-head:hover, .entertainment-head:hover, .sports-head:hover, .stickers-head:hover, .reactions-head:hover {
-  background: linear-gradient(to right, #9933ff, #3316ed); /* преминаване към друг цвят при hover */
+  background: linear-gradient(to right, #9933ff, #3316ed); 
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .reactions-container, 
