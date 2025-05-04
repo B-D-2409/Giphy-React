@@ -146,14 +146,13 @@ header {
 }
 
 
-
-.reactions-head, .sports-head, .entertainment-head, .stickers-head, .artists-head {
+.reactions-head, .sports-head, .entertainment-head, .stickers-head, .artists-head, .upload, .create {
   position: relative;
   padding-bottom: 10px;
 }
 
 .reactions-head::after, .sports-head::after, .entertainment-head::after, 
-.stickers-head::after, .artists-head::after {
+.stickers-head::after, .artists-head::after, .upload::after, .create::after {
   content: "";
   position: absolute;
   bottom: 0;
@@ -184,6 +183,15 @@ header {
 }
 
 
+.upload::after {
+  background-color: #28a745;  
+}
+
+.create::after {
+  background-color: #218838;  
+}
+
+
 nav a {
   color: white;
   font-size: 1.2rem; 
@@ -208,7 +216,7 @@ nav a {
   background-color: rgba(120, 41, 188, 0.8);
 }
 
-/* Стил за контейнера на всички гифове */
+
 .trending-container {
   display: flex;
   flex-wrap: wrap;
@@ -217,7 +225,7 @@ nav a {
   padding: 20px;
 }
 
-/* Стил за всеки един гиф елемент */
+
 .trending-gif {
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -234,13 +242,21 @@ nav a {
 }
 
 .trending-gif:hover {
-  transform: scale(1.05); /* Набляга на гифа при hover */
+  transform: scale(1.05);
 }
 
-/* Стил за заглавието на секцията */
+
 h2 {
   text-align: center;
   font-size: 2rem;
   margin-bottom: 30px;
   color: #333;
+}
+
+.upload {
+  color: #9933ff; /* лилаво */
+}
+
+.create {
+  color: #3316ed; /* розово */
 }

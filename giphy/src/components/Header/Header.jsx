@@ -20,6 +20,8 @@ export default function Header() {
                     <NavLink to="/Stickers" className="stickers-head">Stickers</NavLink>
                     <NavLink to="/Artists" className="artists-head">Artists</NavLink>
                     <button className="more-options-button">⋮</button>
+                    <NavLink to='/upload' className='upload'>Upload</NavLink>
+                    <NavLink to='/create' className='create'>Create</NavLink>
                 </nav>
 
             </div>

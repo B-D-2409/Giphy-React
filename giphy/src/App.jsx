@@ -7,6 +7,8 @@ import Stickers from './views/Stickers/Stickers'
 import Artists from './views/Artists/Artists'
 import Reactions from './views/Reactions/Reactions';
 import Trending from './views/Trending/Trending';
+import Upload from './views/Upload/Upload';
+import Create from './views/Create/Create';
 function App() {
 
   return (
@@ -19,6 +21,8 @@ function App() {
       <Route path="/Sports" element={<Sports />} />
       <Route path="/Stickers" element={<Stickers />} />
       <Route path="/Artists" element={<Artists />} />
+      <Route path='/Upload' element={<Upload />} />
+      <Route path="/Create" element={<Create />} />
 
     </Routes>
 
