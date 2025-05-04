@@ -12,7 +12,7 @@
   transition: filter 300ms;
 }
 .logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+  filter: drop-shadow(0 0 2em #0a107aaa);
 }
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
@@ -149,6 +149,7 @@ header {
 .reactions-head, .sports-head, .entertainment-head, .stickers-head, .artists-head, .upload, .create {
   position: relative;
   padding-bottom: 10px;
+  
 }
 
 .reactions-head::after, .sports-head::after, .entertainment-head::after, 
@@ -189,6 +190,12 @@ header {
 
 .create::after {
   background-color: #218838;  
+}
+
+.upload, .create {
+  background: linear-gradient(to right, #6328c3, #5e149b, #9933ff, #852ea3, #650d5d);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 
@@ -254,9 +261,124 @@ h2 {
 }
 
 .upload {
-  color: #9933ff; /* лилаво */
+  color: #9933ff;
+  background: linear-gradient(to right, #28a745, #ffc107); /* зелен към жълт */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .create {
-  color: #3316ed; /* розово */
+  color: #9933ff;
+  background: linear-gradient(to right, #28a745, #ffc107); /* зелен към жълт */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.artists-head {
+  background: linear-gradient(to right, #28a745, #ffc107); /* зелен към жълт */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+.entertainment-head {
+  background: linear-gradient(to right, #28a745, #ffc107); /* зелен към жълт */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+.sports-head {
+  background: linear-gradient(to right, #28a745, #ffc107); /* зелен към жълт */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+.stickers-head {
+  background: linear-gradient(to right, #28a745, #ffc107); /* зелен към жълт */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+.reactions-head {
+  background: linear-gradient(to right, #28a745, #ffc107); /* зелен към жълт */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+.upload, .create {
+  background: linear-gradient(to right, #28a745, #ffc107); /* зелен към жълт */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.upload:hover, .create:hover {
+  background: linear-gradient(to right, #9933ff, #3316ed); /* преминаване към друг цвят при hover */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.artists-head, .entertainment-head, .sports-head, .stickers-head, .reactions-head {
+  background: linear-gradient(to right, #28a745, #ffc107); /* зелен към жълт */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+.artists-head:hover, .entertainment-head:hover, .sports-head:hover, .stickers-head:hover, .reactions-head:hover {
+  background: linear-gradient(to right, #9933ff, #3316ed); /* преминаване към друг цвят при hover */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.reactions-container, 
+.sports-container, 
+.entertainment-container, 
+.stickers-container, 
+.artists-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 20px;
+}
+
+.reactions-gif, 
+.sports-gif, 
+.entertainment-gif, 
+.stickers-gif, 
+.artists-gif {
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.reactions-gif img, 
+.sports-gif img, 
+.entertainment-gif img, 
+.stickers-gif img, 
+.artists-gif img {
+  border-radius: 10px;
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+}
+
+.reactions-gif:hover, 
+.sports-gif:hover, 
+.entertainment-gif:hover, 
+.stickers-gif:hover, 
+.artists-gif:hover {
+  transform: scale(1.05);
 }

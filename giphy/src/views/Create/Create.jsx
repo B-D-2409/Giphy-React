@@ -1,5 +1,5 @@
 export  default function Create() {
     return  (
-        <h1>Upload</h1>
+        <h1>Create</h1>
     )
 }
