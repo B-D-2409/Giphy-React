@@ -1,19 +1,20 @@
-import { useState, useContext } from "react"
-import { AppContext } from "../../services/state/AppContext"
-import { useNavigate } from "react-router-dom"
-import { registerUser } from "../../services/auth.service.js"
-import { createUserHandle, getUserByHandle } from '/src/services/users.service.js'
+import { useState, useContext } from "react";
+import { AppContext } from "../../services/state/AppContext";
+import { useNavigate } from "react-router-dom";
+import { registerUser } from "../../services/auth.service.js";
+import { createUserHandle, getUserByHandle } from '/src/services/users.service.js';
 
 export default function Register() {
     const [user, setUser] = useState({
         handle: '',
         email: '',
         password: '',
-    })
+    });
     const { setAppState } = useContext(AppContext);
     const navigate = useNavigate();
 
-    const register = () => {
+    const register = (e) => {
+        e.preventDefault();  
         if (!user.email || !user.password || !user.handle) {
             return alert('Please enter valid credentials');
         }
@@ -42,28 +43,54 @@ export default function Register() {
                 console.error(error);
                 alert(error.message);
             });
-    }
+    };
 
     const updateUser = (prop) => (e) => {
         setUser({
             ...user,
-            [prop]: e.target.value
+            [prop]: e.target.value,
         });
-    }
+    };
 
     return (
-        <div>
+        <div className="register-container">
             <h2>Register</h2>
-            <label htmlFor="handle">Handle:</label>
-            <input value={user.handle} onChange={updateUser('handle')} type='text' id='handle' name='handle' />
-            <br /> <br />
-            <label htmlFor="email">Email:</label>
-            <input value={user.email} onChange={updateUser('email')} type='text' id='email' name='email' />
-            <br /> <br />
-            <label htmlFor="password">Password: </label>
-            <input value={user.password} onChange={updateUser('password')} type='text' id='password' name='password' />
-            <br /> <br />
-            <button onClick={register}>Register</button>
+
+            <form onSubmit={register}>  
+                <div>
+                    <label htmlFor="handle">Handle:</label>
+                    <input
+                        value={user.handle}
+                        onChange={updateUser('handle')}
+                        type='text'
+                        id='handle'
+                        name='handle'
+                    />
+                </div>
+                <div>
+                    <label htmlFor="email">Email:</label>
+                    <input
+                        value={user.email}
+                        onChange={updateUser('email')}
+                        type='email'
+                        id='email'
+                        name='email'
+                    />
+                </div>
+                <div>
+                    <label htmlFor="password">Password:</label>
+                    <input
+                        value={user.password}
+                        onChange={updateUser('password')}
+                        type='password'
+                        id='password'
+                        name='password'
+                    />
+                </div>
+                <div className="register">
+                    <button type="submit">Register</button> 
+                </div>
+            </form>
         </div>
-    )
+    );
 }
