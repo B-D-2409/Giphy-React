@@ -407,16 +407,17 @@ h2 {
 .search-bar {
   display: flex;
   justify-content: center;
-  width: 80%; 
+  width: 70%; 
   position: fixed; 
-  top: 120px; 
-  left: 10%; 
-  right: 0; 
+  top: 110px; 
+  left: 16%; 
+  right: 0%; 
   z-index: 9999; 
-  padding: 0px; 
+  padding: -5px; 
   background-color: #eff1f1ba; 
   margin-right: auto; 
   border-radius: 20px;
+  margin:-0.5%
 }
 
 .search-bar button {
@@ -451,7 +452,7 @@ section {
 .more-options-line {
   width: 30px; 
   height: 3px; 
-  background: linear-gradient(to right, #6328c3, #5e149b, #9933ff, #852ea3, #650d5d); /* Градиент */
+  background: linear-gradient(to right, #6328c3, #5e149b, #9933ff, #852ea3, #650d5d); 
   margin: 0 auto; 
   margin-top: 45px;
   margin-left: -57px
