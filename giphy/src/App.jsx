@@ -11,28 +11,38 @@ import Upload from './views/Upload/Upload';
 import Create from './views/Create/Create';
 import { SearchBar } from './views/SearchBar/SearchBar';
 import { useState } from 'react';
-
+import { AppContext } from './services/state/AppContext';
+import Register from './components/register/Register';
+import Login from './views/Login/Login';
+import Authenticated from './components/hoc/authentication';
 function App() {
-  const [gifs, setGifs] = useState([]); // съхраняваме резултатите от търсенето
+  const [gifs, setGifs] = useState([]); 
 
+  const [appState, setAppState] = useState({
+    user: null,
+    userData: null,
+  })
   return (
     <BrowserRouter>
-      <Header />
-      <div className="search-container">
-        <SearchBar onResults={setGifs} /> {/* Подаваме setGifs за актуализиране на резултатите */}
-        <div className="separator"></div>
-      </div>
-
-      <Routes>
-        <Route path='/' element={<Trending gifs={gifs} />} />
-        <Route path='/Reactions' element={<Reactions gifs={gifs} />} />
-        <Route path='/Entertainment' element={<Entertainment gifs={gifs} />} />
-        <Route path="/Sports" element={<Sports gifs={gifs} />} />
-        <Route path="/Stickers" element={<Stickers gifs={gifs} />} />
-        <Route path="/Artists" element={<Artists gifs={gifs} />} />
-        <Route path='/Upload' element={<Upload gifs={gifs} />} />
-        <Route path="/Create" element={<Create gifs={gifs} />} />
-      </Routes>
+      <AppContext.Provider value={{...appState, setAppState}}>
+        <Header />
+        <div className="search-container">
+          <SearchBar onResults={setGifs} /> 
+          <div className="separator"></div>
+        </div>
+        <Routes>
+          <Route path='/' element={<Authenticated><Trending gifs={gifs}/></Authenticated>} />
+          <Route path='/Reactions' element={<Authenticated><Reactions gifs={gifs} /></Authenticated>} />
+          <Route path='/Entertainment' element={<Authenticated><Entertainment gifs={gifs} /></Authenticated>} />
+          <Route path="/Sports" element={<Authenticated><Sports gifs={gifs} /></Authenticated>} />
+          <Route path="/Stickers" element={<Authenticated><Stickers gifs={gifs}/></Authenticated>} />
+          <Route path="/Artists" element={<Authenticated><Artists gifs={gifs}/></Authenticated>} />
+          <Route path='/Upload' element={<Authenticated><Upload gifs={gifs}/></Authenticated>} />
+          <Route path="/Create" element={<Authenticated><Create gifs={gifs}/></Authenticated>} />
+          <Route path='/login' element={<Login />} />
+          <Route path='/register' element={<Register />} />
+        </Routes>
+      </AppContext.Provider>
     </BrowserRouter>
   );
 }

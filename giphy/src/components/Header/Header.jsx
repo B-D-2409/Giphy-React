@@ -22,6 +22,8 @@ export default function Header() {
                         <div className="more-options-line"></div>
                         <NavLink to='/upload' className='upload'>Upload</NavLink>
                         <NavLink to='/create' className='create'>Create</NavLink>
+                        <NavLink to='/register' className='register'>Register</NavLink>
+                        <NavLink to='/login' className='login'>Login</NavLink>
                     </nav>
                 </div>
             </header>
