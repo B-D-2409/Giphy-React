@@ -11,7 +11,7 @@ export default function InfiniteGifScroll() {
 
         try {
             const response = await fetch(
-                `https://api.giphy.com/v1/gifs/trending?api_key=${API_KEY}&limit=20&offset=${(page - 1) * 20}`
+                `https://api.giphy.com/v1/gifs/trending?api_key=${API_KEY}&limit=20&offset=${(page - 1) * 5}`
             );
 
             const data = await response.json();
@@ -37,20 +37,30 @@ export default function InfiniteGifScroll() {
 
     }, [page])
     return (
+        <div className="scrollableDiv" style={{ height: '100vh'}}>
         <InfiniteScroll
             dataLength={gifs.length}
             next={() => setPage((prev) => prev + 1)}
             hasMore={hasMore}
-            loader={<div className="loading-dots">Loading<span className="dot">.</span><span className="dot">.</span><span className="dot">.</span></div>}
-            endMessage={<p>🎉 No more gifs to show!</p>}
+            loader={
+                <div className="loading-dots">
+                    <span className="dot">.</span>
+                    <span className="dot">.</span>
+                    <span className="dot">.</span>
+                    <span className="dot">.</span>
+                </div>
+            }
+            scrollableTarget="scrollableDiv"
         >
             <div className='scroll-container'>
                 {gifs.map((gif) => (
                     <img key={gif.id} src={gif.images.fixed_height.url} alt={gif.title} />
                 ))}
             </div>
-
         </InfiniteScroll>
+    </div>
+    
+    
     )
 
 }
