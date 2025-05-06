@@ -22,7 +22,7 @@ export default function Trending({ gifs }) {
         }
     }, [gifs]); 
 
-    const displayGifs = gifs.length > 0 ? gifs : trendingGifs;
+ const displayGifs = gifs.length > 0 ? gifs : trendingGifs;   
 
     return (
         <div>

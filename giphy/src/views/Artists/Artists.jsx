@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
 import InfiniteGifScroll from "../../components/infinite-scroll/InfiniteScroll";
-export default function Artists() {
+export default function Artists({gifs}) {
     const [artistsGifs, setArtistsGifs] = useState([]);
     const API_KEY = import.meta.env.VITE_GIPHY_API_KEY;
 
@@ -17,22 +17,32 @@ export default function Artists() {
                 console.error('Error fetching gifs:', error);
             }
         }
-        fetchArtistsGifs()
+        if(gifs.length === 0) {
+
+            fetchArtistsGifs()
+        }
     }, [])
+    const displayGifs = gifs.length > 0 ? gifs : setArtistsGifs
     return (
         <div>
-            <h2>Sports GIFs</h2>
-            <div className="artists-container">
-                {artistsGifs.map((gif) => (
+        <h2>{gifs.length > 0 ? 'Search Results' : 'artistsGifs'}</h2>
+        <div className="artists-container">
+            {displayGifs.length === 0 ? (
+                <p>No results found. Please search for GIFs.</p> 
+            ) : gifs.length > 0 ? (
+                displayGifs.map((gif) => (
                     <div className="artists-gif" key={gif.id}>
                         <img
                             src={gif.images.fixed_height.url}
                             alt={gif.title}
                         />
                     </div>
-                ))}
+                ))
+            ) : (
+            
                 <InfiniteGifScroll category="artists" />
-            </div>
+            )}
         </div>
+    </div>
     );
 }
