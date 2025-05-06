@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-
+import InfiniteGifScroll from "../../components/infinite-scroll/InfiniteScroll";
 export default function Artists() {
     const [artistsGifs, setArtistsGifs] = useState([]);
     const API_KEY = import.meta.env.VITE_GIPHY_API_KEY;
@@ -7,13 +7,13 @@ export default function Artists() {
     useEffect(() => {
         const fetchArtistsGifs = async () => {
 
-            try{
+            try {
 
-            const response = await fetch(`https://api.giphy.com/v1/gifs/search?api_key=${API_KEY}&q=artists&limit=25`)
-            const data = await response.json();
-            setArtistsGifs(data.data);
+                const response = await fetch(`https://api.giphy.com/v1/gifs/search?api_key=${API_KEY}&q=artists&limit=25`)
+                const data = await response.json();
+                setArtistsGifs(data.data);
 
-            }catch(error) {
+            } catch (error) {
                 console.error('Error fetching gifs:', error);
             }
         }
@@ -31,6 +31,9 @@ export default function Artists() {
                         />
                     </div>
                 ))}
+                <InfiniteGifScroll
+                    apiUrl={`https://api.giphy.com/v1/gifs/trending?api_key=${import.meta.env.VITE_GIPHY_API_KEY}`}
+                />
             </div>
         </div>
     );

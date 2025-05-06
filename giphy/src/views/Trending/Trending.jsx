@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
+import InfiniteGifScroll from "../../components/infinite-scroll/InfiniteScroll";
 
 export default function Trending({ gifs }) {
     const [trendingGifs, setTrendingGifs] = useState([]);
 
-    
     useEffect(() => {
         const fetchTrendingGifs = async () => {
             try {
@@ -17,13 +17,10 @@ export default function Trending({ gifs }) {
             }
         };
 
-       
         if (gifs.length === 0) {
             fetchTrendingGifs();
         }
     }, [gifs]); 
-
-    
 
     const displayGifs = gifs.length > 0 ? gifs : trendingGifs;
 
@@ -33,7 +30,7 @@ export default function Trending({ gifs }) {
             <div className="trending-container">
                 {displayGifs.length === 0 ? (
                     <p>No results found. Please search for GIFs.</p> 
-                ) : (
+                ) : gifs.length > 0 ? (
                     displayGifs.map((gif) => (
                         <div className="trending-gif" key={gif.id}>
                             <img
@@ -42,6 +39,11 @@ export default function Trending({ gifs }) {
                             />
                         </div>
                     ))
+                ) : (
+                
+                    <InfiniteGifScroll
+                        apiUrl={`https://api.giphy.com/v1/gifs/trending?api_key=${import.meta.env.VITE_GIPHY_API_KEY}`}
+                    />
                 )}
             </div>
         </div>

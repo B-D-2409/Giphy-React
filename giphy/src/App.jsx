@@ -15,6 +15,7 @@ import { AppContext } from './services/state/AppContext';
 import Register from './components/register/Register';
 import Login from './views/Login/Login';
 import Authenticated from './components/hoc/authentication';
+
 function App() {
   const [gifs, setGifs] = useState([]); 
 

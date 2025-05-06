@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-
+import InfiniteGifScroll from "../../components/infinite-scroll/InfiniteScroll";
 export default function Sports() {
     const [sportsGifs, setSportsGifs] = useState([]);
     const API_KEY = import.meta.env.VITE_GIPHY_API_KEY;
@@ -7,13 +7,13 @@ export default function Sports() {
     useEffect(() => {
         const fetchSportsGifs = async () => {
 
-            try{
+            try {
 
-            const response = await fetch(`https://api.giphy.com/v1/gifs/search?api_key=${API_KEY}&q=sports&limit=25`)
-            const data = await response.json();
-            setSportsGifs(data.data);
+                const response = await fetch(`https://api.giphy.com/v1/gifs/search?api_key=${API_KEY}&q=sports&limit=25`)
+                const data = await response.json();
+                setSportsGifs(data.data);
 
-            }catch(error) {
+            } catch (error) {
                 console.error('Error fetching gifs:', error);
             }
         }
@@ -31,6 +31,9 @@ export default function Sports() {
                         />
                     </div>
                 ))}
+                <InfiniteGifScroll
+                    apiUrl={`https://api.giphy.com/v1/gifs/trending?api_key=${import.meta.env.VITE_GIPHY_API_KEY}`}
+                />
             </div>
         </div>
     );

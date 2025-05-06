@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-
+import InfiniteGifScroll from "../../components/infinite-scroll/InfiniteScroll";
 export default function Sports() {
     const [stickersGifs, setStickersGifs] = useState([]);
     const API_KEY = import.meta.env.VITE_GIPHY_API_KEY;
@@ -31,6 +31,9 @@ export default function Sports() {
                         />
                     </div>
                 ))}
+                 <InfiniteGifScroll
+                        apiUrl={`https://api.giphy.com/v1/gifs/trending?api_key=${import.meta.env.VITE_GIPHY_API_KEY}`}
+                    />
             </div>
         </div>
     );
