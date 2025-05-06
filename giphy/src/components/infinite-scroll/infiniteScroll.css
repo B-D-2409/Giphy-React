@@ -1,12 +1,12 @@
 .loading-dots {
     font-size: 10.5em;
     display: flex;
-    align-items:center;
+    align-items: center;
     justify-content: center;
     color: #333;
-    height: 100px; 
+    height: 100px;
     overflow: hidden;
-    height: 150px; 
+    height: 150px;
     margin-bottom: 50px;
 }
 
@@ -27,18 +27,45 @@
 
 .dot:nth-child(3) {
     animation-delay: 0.6s;
-    color: gold; 
+    color: gold;
 }
+
 .dot:nth-child(4) {
     animation-delay: 0.6s;
-    color: rgb(18, 164, 23); 
+    color: rgb(18, 164, 23);
 }
+
 @keyframes dot-blink {
-    0%, 100% {
+
+    0%,
+    100% {
         opacity: 0;
     }
+
     50% {
         opacity: 1;
     }
 }
 
+.scroll-container {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(200px, 1fr));
+    gap: 20px 20px;
+    padding: 20px;
+    margin-top: -15px;
+
+}
+
+
+
+.scroll-container img {
+    border-radius: 10px;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    z-index: 20;
+}
+
+.scroll-container img:hover {
+    transform: scale(1.1);
+}
