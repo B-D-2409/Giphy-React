@@ -32,9 +32,7 @@ export default function Entertainment() {
                     </div>
                 ))}
 
-                <InfiniteGifScroll
-                    apiUrl={`https://api.giphy.com/v1/gifs/trending?api_key=${import.meta.env.VITE_GIPHY_API_KEY}`}
-                />
+<InfiniteGifScroll category="entertainment" />
             </div>
         </div>
     );

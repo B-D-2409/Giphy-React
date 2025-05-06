@@ -41,9 +41,7 @@ export default function Trending({ gifs }) {
                     ))
                 ) : (
                 
-                    <InfiniteGifScroll
-                        apiUrl={`https://api.giphy.com/v1/gifs/trending?api_key=${import.meta.env.VITE_GIPHY_API_KEY}`}
-                    />
+                    <InfiniteGifScroll category="trending" />
                 )}
             </div>
         </div>
