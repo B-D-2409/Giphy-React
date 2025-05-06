@@ -115,8 +115,12 @@ nav a:hover {
 
 
 nav a.active {
-  background-color: #61dafb;
+  background-color: #07772c;
 }
+.nav-link.active {
+  background-color: #007bff !important;
+}
+
 
 
 .more-options-button {

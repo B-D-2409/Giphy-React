@@ -10,14 +10,23 @@ import Trending from './views/Trending/Trending';
 import Upload from './views/Upload/Upload';
 import Create from './views/Create/Create';
 import { SearchBar } from './views/SearchBar/SearchBar';
-import { useState } from 'react';
+import { useState,useEffect } from 'react';
 import { AppContext } from './services/state/AppContext';
 import Register from './components/register/Register';
 import Login from './views/Login/Login';
 import Authenticated from './components/hoc/authentication';
-
+import { onAuthStateChanged } from 'firebase/auth';
+import { auth } from './config/firebase.config';
 function App() {
   const [gifs, setGifs] = useState([]); 
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      setAppState(prev => ({ ...prev, user: currentUser }));
+    });
+    return () => unsubscribe();
+}, []);
+
 
   const [appState, setAppState] = useState({
     user: null,
