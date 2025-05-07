@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { AppContext } from "../../services/state/AppContext";
 import { logoutUser } from "../../services/auth.service";
@@ -21,6 +21,8 @@ export default function Header() {
             });
     };
 
+
+
     return (
         <>
             <header>
@@ -42,12 +44,12 @@ export default function Header() {
                         <div className="more-options-line"></div>
                         <NavLink to='/upload' className='upload'>Upload</NavLink>
                         <NavLink to='/create' className='create'>Create</NavLink>
+                        <NavLink to='/favorites' className='favorites'>Favorites</NavLink>
                         <div className="auth-buttons">
                             {!user && <NavLink to='/register' className='register'>Register</NavLink>}
                             {!user && <NavLink to='/login' className='login'>Login</NavLink>}
                         </div>
                     </nav>
-                    
                     {user && <button className="logout" onClick={logout}>Logout</button>}
                     {userData && <span>Welcome, {userData.handle}</span>}
                 </div>

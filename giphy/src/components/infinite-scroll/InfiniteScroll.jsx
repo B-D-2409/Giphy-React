@@ -52,6 +52,7 @@ export default function InfiniteGifScroll({category}) {
                     <span className="dot">.</span>
                     <span className="dot">.</span>
                     <span className="dot">.</span>
+                    <span className="dot">.</span>
                 </div>
             }
             scrollableTarget="scrollableDiv"

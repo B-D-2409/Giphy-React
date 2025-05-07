@@ -27,7 +27,7 @@ export default function Sports({ gifs }) {
     return (
         <div>
             <h2>{gifs.length > 0 ? 'Search Results' : 'stickersGifs'}</h2>
-            <div className="strickers-container">
+            <div className="stickers-container">
                 {displayGifs.length === 0 ? (
                     <p>No results found. Please search for GIFs.</p> 
                 ) : gifs.length > 0 ? (
