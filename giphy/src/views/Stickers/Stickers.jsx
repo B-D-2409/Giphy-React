@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react"
 import InfiniteGifScroll from "../../components/infinite-scroll/InfiniteScroll";
+import { useNavigate } from "react-router-dom";
 export default function Sports({ gifs }) {
     const [stickersGifs, setStickersGifs] = useState([]);
     const API_KEY = import.meta.env.VITE_GIPHY_API_KEY;
+    const navigate = useNavigate();
 
     useEffect(() => {
         const fetchStickersGifs = async () => {
@@ -20,7 +22,7 @@ export default function Sports({ gifs }) {
         if (gifs.length === 0) {
             fetchStickersGifs()
         }
-    }, [])
+    }, [gifs])
 
     const displayGifs = gifs.length > 0 ? gifs : setStickersGifs;   
 
@@ -36,6 +38,8 @@ export default function Sports({ gifs }) {
                             <img
                                 src={gif.images.fixed_height.url}
                                 alt={gif.title}
+                                onClick={() => navigate(`/single-gif/${gif.id}`)} 
+                                style={{ cursor: 'pointer' }} 
                             />
                         </div>
                     ))

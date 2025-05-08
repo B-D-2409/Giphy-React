@@ -1,4 +1,4 @@
-import { useContext, useEffect } from "react";
+import { useContext} from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { AppContext } from "../../services/state/AppContext";
 import { logoutUser } from "../../services/auth.service";

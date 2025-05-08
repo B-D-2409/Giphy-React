@@ -18,6 +18,7 @@ import Authenticated from './components/hoc/authentication';
 import { onAuthStateChanged } from 'firebase/auth';
 import { auth } from './config/firebase.config';
 import Favorites from './views/favorites/Favorites';
+import SingleGif from './views/single-gif/SingleGif';
 function App() {
   const [gifs, setGifs] = useState([]); 
 
@@ -52,6 +53,7 @@ function App() {
           <Route path='/Upload' element={<Authenticated><Upload gifs={gifs}/></Authenticated>} />
           <Route path="/Create" element={<Authenticated><Create gifs={gifs}/></Authenticated>} />
           <Route path="/favorites" element={<Authenticated><Favorites gifs={gifs}/></Authenticated>} />
+          <Route path="/single-gif/:id" element={<Authenticated><SingleGif /></Authenticated>} />
           <Route path='/login' element={<Login />} />
           <Route path='/register' element={<Register />} />
         </Routes>

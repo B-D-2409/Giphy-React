@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react"
 import InfiniteGifScroll from "../../components/infinite-scroll/InfiniteScroll";
+import { useNavigate } from "react-router-dom";
 export default function Entertainment({gifs}) {
     const [entertainmentGifs, setEntertainmentGifs] = useState([]);
     const API_KEY = import.meta.env.VITE_GIPHY_API_KEY;
+    const navigate = useNavigate();
 
     useEffect(() => {
         const fetchEntertainmentGifs = async () => {
@@ -35,6 +37,8 @@ export default function Entertainment({gifs}) {
                         <img
                             src={gif.images.fixed_height.url}
                             alt={gif.title}
+                            onClick={() => navigate(`/single-gif/${gif.id}`)} 
+                            style={{ cursor: 'pointer' }} 
                         />
                     </div>
                 ))
