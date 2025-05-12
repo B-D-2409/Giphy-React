@@ -1,0 +1,63 @@
+.gif-detail {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    padding: 40px 40px 60px; 
+    min-height: 80vh; 
+    margin-top: -100px; 
+}
+
+.gif-side {
+    flex: 0 0 280px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.gif-center img {
+    max-width: 500px; 
+    height: auto;
+    border-radius: 12px;
+    border: 2px solid white;
+}
+
+.gif-side.info h1 {
+    font-size: 28px; 
+    color: #b947fa;
+    text-align: center;
+}
+
+.gif-side.info .username {
+    font-size: 20px;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 8px 14px;
+    border-radius: 6px;
+    color: #b947fa;
+}
+
+.gif-detail-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.gif-detail-actions button {
+    padding: 16px 32px;
+    border: none;
+    border-radius: 10px;
+    background-image: linear-gradient(to left, #7c057c, #852ea3);
+    color: white;
+    font-size: 18px; 
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.25s ease, transform 0.15s ease;
+    width: 200px;
+    border: 1px solid black;
+}
+
+.gif-detail-actions button:hover {
+    background-image: linear-gradient(to left, #6328c3, #5e149b, #9933ff, #852ea3, #650d5d);
+    transform: scale(1.05);
+}

@@ -539,13 +539,14 @@ section {
 
 .login {
   margin-left: 50px;
-  background-color: #3f860d;
+  background-image: linear-gradient(to left, #6328c3, #5e149b, #9933ff, #852ea3, #650d5d);
+  color: snow !important
 }
 
 .register{
   margin-left: 50px;
-  background-color: #3f860d;
-
+  background-image: linear-gradient(to left, #6328c3, #5e149b, #9933ff, #852ea3, #650d5d);
+  color: snow !important
 }
 
 .auth-buttons .login {
@@ -580,7 +581,8 @@ section {
 }
 
 .logout{
-  background-color: #5a2a91;
+  background-image: linear-gradient(to left, #6328c3, #5e149b, #9933ff, #852ea3, #650d5d);
+  color: snow !important
 }
 
 

@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-
+import { addGifToFavorites } from '../../services/users.service';
+import './SingleGif.css';
 export default function SingleGif() {
     const { id } = useParams();
     const [single, setSingle] = useState(null); 
@@ -22,13 +23,76 @@ export default function SingleGif() {
         fetchSingleGif();
     }, [id]);
 
+    const handleFavorite = async () => {
+        
+        try {
+            await addGifToFavorites(single);
+            alert("gif was added to favorite!");
+        } catch (error) {
+            console.error("Error with add favorite gif:", error);
+        }
+    
+    }
+
+    const handleCopyLink = () => {
+        const link = single?.images?.original?.url || '';
+        navigator.clipboard.writeText(link)
+            .then(() => {
+                alert("Link copied to clipboard!");
+            })
+            .catch((error) => {
+                console.error("Error copying link:", error);
+            });
+    }
+
+    const handleDownload = async () => {
+        try {
+            const response = await fetch(single.images.original.url);
+            const blob = await response.blob();
+    
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `${single.title || 'download'}.gif`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        } catch (error) {
+            console.error("Error downloading gif:", error);
+        }
+    };
+    
+
+
     if (!single || !single.images) return <p>Loading...</p>;
 
     return (
-        <div>
-            <h1>{single.title}</h1>
-            <img src={single.images.original.url} alt={single.title} />
-            <p>Username: {single.username || "Unknown"}</p>
+        <div className="gif-detail">
+            <div className="gif-side info">
+                <h1>{single.title}</h1>
+                <p className="username">{single.username || "Unknown"}</p>
+            </div>
+    
+            <div className="gif-center">
+                <img src={single.images.original.url} alt={single.title} />
+            </div>
+    
+            <div className="gif-side actions">
+                <div className="gif-detail-actions">
+                    <button id="favorite-btn" onClick={handleFavorite}>
+                        Favorite
+                    </button>
+                    <button id="copy-link-btn" onClick={handleCopyLink}>
+                        Copy Link
+                    </button>
+                    <button id="back-btn" onClick={handleDownload}>
+                        Download
+                    </button>
+                </div>
+            </div>
         </div>
     );
+    
+    
 }

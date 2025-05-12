@@ -1,0 +1,35 @@
+.favorites-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px;
+    margin-top: 50px;
+}
+
+.favorites-container h2 {
+    font-size: 54px;
+    margin-bottom: 20px;
+    color: #7307b1;
+}
+
+.favorites {
+    background: linear-gradient(to right, #28a745, #ffc107);
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    padding-bottom: 0px;
+ 
+}
+
+.favorites::after {
+    content: "";
+    display: block;
+    position: relative;
+    width: 140%;
+    left: -20px;
+    height: 5px;
+    margin-top: 5px;
+    background: linear-gradient(to right, #6328c3, #5e149b, #9933ff, #852ea3, #650d5d); 
+  }
+
+  
