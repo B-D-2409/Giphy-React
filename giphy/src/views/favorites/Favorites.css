@@ -16,13 +16,20 @@
     padding-bottom: 0px;
 }
 
+.favorites:hover{
+    background: linear-gradient(to right, #9933ff, #3316ed); 
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
 
 
 .favorites::after {
     content: "";
     display: block;
     position: relative;
-    width: 140%;
+    width: 160%;
     left: -20px;
     height: 5px;
     margin-top: 5px;
@@ -47,3 +54,4 @@
     z-index: 20;
     transform: scale(1.1);
 }
+

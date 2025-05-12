@@ -1,4 +1,4 @@
-import { useState, useContext } from "react";
+import { useState, useContext, lazy } from "react";
 import { AppContext } from "../../services/state/AppContext";
 import { useNavigate } from "react-router-dom";
 import { registerUser } from "../../services/auth.service.js";
@@ -9,14 +9,16 @@ export default function Register() {
         handle: '',
         email: '',
         password: '',
+        firstName: '',
+        lastName: '',
     });
     const { setAppState } = useContext(AppContext);
     const navigate = useNavigate();
 
     const register = (e) => {
-        e.preventDefault();  
-        if (!user.email || !user.password || !user.handle) {
-            return alert('Please enter valid credentials');
+        e.preventDefault();
+        if (!user.email || !user.password || !user.firstName || !user.lastName) {
+            return alert('Please enter valid email, password, handle, first name, and last name!');
         }
 
         getUserByHandle(user.handle)
@@ -29,7 +31,7 @@ export default function Register() {
             .then((credentials) => {
                 const { user: firebaseUser } = credentials;
 
-                return createUserHandle(user.handle, firebaseUser.uid, user.email)
+                return createUserHandle(user.handle, firebaseUser.uid, user.email, user.firstName, user.lastName)
                     .then(() => {
                         setAppState({
                             user: firebaseUser,
@@ -56,9 +58,31 @@ export default function Register() {
         <div className="register-container">
             <h2>Register</h2>
 
-            <form onSubmit={register}>  
+            <form onSubmit={register}>
+                <div className="name-fields">
                 <div>
-                    <label htmlFor="handle">Handle:</label>
+                    <label htmlFor="name">First Name:</label>
+                    <input
+                        value={user.firstName}
+                        onChange={updateUser('firstName')}
+                        type='text'
+                        id='firstName'
+                        name='firstName'
+                    />
+                </div>
+                <div>
+                    <label htmlFor='lastName'>Last Name</label>
+                    <input
+                        value={user.lastName}
+                        onChange={updateUser('lastName')}
+                        type='text'
+                        id='lastName'
+                        name='lastName'
+                    />
+                </div>
+                </div>
+                <div>
+                    <label htmlFor="handle">Username:</label>
                     <input
                         value={user.handle}
                         onChange={updateUser('handle')}
@@ -87,8 +111,8 @@ export default function Register() {
                         name='password'
                     />
                 </div>
-                <div className="register">
-                    <button type="submit">Register</button> 
+                <div className="register-submit">
+                    <button type="submit">Register</button>
                 </div>
             </form>
         </div>

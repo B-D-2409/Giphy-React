@@ -70,7 +70,7 @@ export default function Login() {
                     />
                 </div>
                 <div>
-                    <div className="login">
+                    <div className="login-submit">
                     <button type="submit">Login</button>
                     </div>
                 </div>

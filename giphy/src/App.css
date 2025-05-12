@@ -120,16 +120,6 @@ nav a:hover {
   color: white;
 }
 
-
-nav a.active {
-  background-color: #07772c !important
-}
-.nav-link.active {
-  background-color: #007bff !important;
-}
-
-
-
 .more-options-button {
   background: none;
   border: none;
@@ -265,12 +255,35 @@ nav a {
 }
 
 .more-options-dropdown a:hover {
-  background-color: rgba(168, 60, 136, 0.7);
+  background-color: rgba(104, 10, 167, 0.7);
 }
 
 .more-options-wrapper:hover .more-options-dropdown {
   display: block;
 }
+
+.more-options-button {
+  position: relative;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  padding-bottom: 10px;
+  left: 70%;
+}
+
+.more-options-button::after {
+  content: "";
+  position: absolute;
+  bottom: 5px;
+  left: 45%;
+  transform: translateX(-50%);
+  width: 30px;
+  height: 4px;
+  background: linear-gradient(to right, #6328c3, #5e149b, #9933ff, #852ea3, #650d5d);
+  border-radius: 2px;
+}
+
 
 
 .trending-container {
@@ -503,20 +516,49 @@ section {
   margin-left: -57px
 
 }
-.login-container::after,
-.register-container::after {
-  display: none;
+.name-fields {
+  display: flex;
+  gap: 20px;
 }
+
+.name-fields > div {
+  flex: 1;
+}
+
+
+.login-container,
+.register-container {
+  max-width: 500px;
+  margin: 100px auto;
+  padding: 55px;
+  background-color: #0d0602c8;
+  border-radius: 20px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+
+}
+
+.register{
+  background-image: linear-gradient(to left, #6328c3, #5e149b, #9933ff, #852ea3, #650d5d);
+  color: snow !important;
+  margin-right: 5px;
+  margin-left: -20px;
+}
+
+.login{
+  background-image: linear-gradient(to left, #6328c3, #5e149b, #9933ff, #852ea3, #650d5d);
+  color: snow !important
+}
+
 
 
 .login-container input,
 .register-container input {
   width: 100%;
-  padding: 20px;
+  padding: 15px;
   margin: 15px 0;
-  font-size: 1.5rem;
-  border: 3px solid #333; 
-  border-radius: 10px;
+  font-size: 1.2rem;
+  border: 2px solid #333; 
+  border-radius: 8px;
   background-color: #1e1e1e;
   color: #eee;
   outline: none;
@@ -526,102 +568,56 @@ section {
 .login-container input:focus,
 .register-container input:focus {
   border-color: #555;
-  box-shadow: 0 0 15px rgba(85, 85, 85, 0.7);
+  box-shadow: 0 0 10px rgba(85, 85, 85, 0.6);
 }
-
 
 .login-container label,
 .register-container label {
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   font-weight: bold;
-  color: #0f9e45;
+  color: #12d5d8;
 }
+
 
 .login-container button,
 .register-container button {
   width: 100%;
-  padding: 20px;
-  font-size: 1.5rem;
+  margin-left: 20px;
+  padding: 15px;
+  font-size: 2.3rem;
   font-weight: bold;
-  color: #438c0f;
+  color: #12d5d8;
   background: linear-gradient(to right, #444, #222); 
   border: none;
-  border-radius: 10px;
+  border-radius: 8px;
   cursor: pointer;
   transition: background 0.3s, transform 0.2s;
 }
 
+
 .login-container button:hover,
 .register-container button:hover {
   background: linear-gradient(to right, #222, #444);
-  transform: scale(1.08);
+  transform: scale(1.05);
 }
 
 
 .login-container h2,
 .register-container h2 {
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: bold;
-  color: #438c0f;
+  color: #b58c40;
   text-align: center;
   margin-bottom: 20px;
-  
 }
-.auth-buttons {
-  display: flex;
-  gap: 5px; 
-  align-items: center; 
+.register-container h2{
+  color: #12d5d8;
 }
 
-
-.auth-buttons .login,
-.auth-buttons .register {
-  margin: 0; 
-  left: 20px;
+.login-container h1{
+  color: #12d5d8;
 }
 
-.login {
-  margin-left: 50px;
-  background-image: linear-gradient(to left, #6328c3, #5e149b, #9933ff, #852ea3, #650d5d);
-  color: snow !important
-}
-
-.register{
-  margin-left: 50px;
-  background-image: linear-gradient(to left, #6328c3, #5e149b, #9933ff, #852ea3, #650d5d);
-  color: snow !important
-}
-
-.auth-buttons .login {
-  background-color: #007BFF; 
-  color: rgb(2, 67, 55); 
-  padding: 10px 20px;
-  border-radius: 5px;
-  border: none;
-  cursor: pointer;
-}
-
-.auth-buttons .register {
-  background-color: #6f42c1; 
-  color: rgb(2, 46, 31); 
-  padding: 10px 20px;
-  border-radius: 5px;
-  border: none;
-  cursor: pointer;
-}
-
-
-.auth-buttons .login:hover {
-  background-color: #0056b3; 
-}
-
-.auth-buttons .register:hover {
-  background-color: #5a2a91; 
-}
-
-.login-container{
- color: #438c0f;
-}
 
 .logout{
   background-image: linear-gradient(to left, #6328c3, #5e149b, #9933ff, #852ea3, #650d5d);
@@ -710,3 +706,19 @@ section {
 
 
 
+
+.nav-wrapper nav a.active {
+  color: #ff4a09;
+  background: #28c4f0; /* Син фон */
+  transition: background-color 0.8s ease, color 0.8s ease; 
+}
+
+
+
+.active-section {
+  background-color: rgba(168, 60, 136, 0.15);
+  color: #044387 !important;
+  border-radius: 8px;
+  padding: 5px 10px;
+  transition: background-color 0.1s ease;
+}
