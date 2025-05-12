@@ -24,29 +24,32 @@ export default function Entertainment({gifs}) {
             fetchEntertainmentGifs()
         }
     }, [])
-    const displayGifs = gifs.length > 0 ? gifs : setEntertainmentGifs
+    const displayGifs = gifs.length > 0 ? gifs : entertainmentGifs
     return (
         <div>
-        <h2>{gifs.length > 0 ? 'Search Results' : 'entertainmentGifs'}</h2>
-        <div className="entertainment-container">
-            {displayGifs.length === 0 ? (
-                <p>No results found. Please search for GIFs.</p> 
-            ) : gifs.length > 0 ? (
-                displayGifs.map((gif) => (
-                    <div className="entertainment-gif" key={gif.id}>
-                        <img
-                            src={gif.images.fixed_height.url}
-                            alt={gif.title}
-                            onClick={() => navigate(`/single-gif/${gif.id}`)} 
-                            style={{ cursor: 'pointer' }} 
-                        />
-                    </div>
-                ))
-            ) : (
-            
-                <InfiniteGifScroll category="entertainment" />
-            )}
+            <h2>{gifs.length > 0 ? 'Search Results' : 'entertainmentGIFs'}</h2>
+            <div className="trending-container">
+                {displayGifs.length === 0 ? (
+                    <p>No results found. Please search for GIFs.</p>
+                ) : (
+                    <>
+                        {displayGifs.map((gif) => (
+                            <div
+                                className="entertainment-gif"
+                                key={gif.id}
+                                onClick={() => navigate(`/single-gif/${gif.id}`)} 
+                                style={{ cursor: 'pointer' }} 
+                            >
+                                <img
+                                    src={gif.images.fixed_height.url}
+                                    alt={gif.title}
+                                />
+                            </div>
+                        ))}
+                        <InfiniteGifScroll category="entertainment" />
+                    </>
+                )}
+            </div>
         </div>
-    </div>
     );
 }

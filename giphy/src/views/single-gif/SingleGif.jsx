@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 
 export default function SingleGif() {
     const { id } = useParams();
-    const [single, setSingle] = useState(null);  // null вместо []
+    const [single, setSingle] = useState(null); 
 
     const API_KEY = import.meta.env.VITE_GIPHY_API_KEY;
 

@@ -26,30 +26,33 @@ export default function Sports({gifs}) {
     }, [])
 
     
-    const displayGifs = gifs.length > 0 ? gifs : setSportsGifs
+    const displayGifs = gifs.length > 0 ? gifs : sportsGifs
 
     return (
         <div>
-    <h2>{gifs.length > 0 ? 'Search Results' : 'sportsGifs'}</h2>
-    <div className="sports-container">
-        {displayGifs.length === 0 ? (
-            <p>No results found. Please search for GIFs.</p> 
-        ) : gifs.length > 0 ? (
-            displayGifs.map((gif) => (
-                <div className="sports-gif" key={gif.id}>
-                    <img
-                        src={gif.images.fixed_height.url}
-                        alt={gif.title}
-                        onClick={() => navigate(`/single-gif/${gif.id}`)} 
-                        style={{ cursor: 'pointer' }} 
-                    />
-                </div>
-            ))
-        ) : (
-        
-            <InfiniteGifScroll category="sports" />
-        )}
-    </div>
-</div>
-    )
+            <h2>{gifs.length > 0 ? 'Search Results' : 'sportsGIFs'}</h2>
+            <div className="trending-container">
+                {displayGifs.length === 0 ? (
+                    <p>No results found. Please search for GIFs.</p>
+                ) : (
+                    <>
+                        {displayGifs.map((gif) => (
+                            <div
+                                className="sports-gif"
+                                key={gif.id}
+                                onClick={() => navigate(`/single-gif/${gif.id}`)} 
+                                style={{ cursor: 'pointer' }} 
+                            >
+                                <img
+                                    src={gif.images.fixed_height.url}
+                                    alt={gif.title}
+                                />
+                            </div>
+                        ))}
+                        <InfiniteGifScroll category="sports" />
+                    </>
+                )}
+            </div>
+        </div>
+    );
 }
