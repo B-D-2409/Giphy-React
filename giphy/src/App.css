@@ -1,5 +1,5 @@
 #root {
-  max-width: 1280px;
+  max-width: 1180px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
@@ -11,6 +11,7 @@
   will-change: filter;
   transition: filter 300ms;
 }
+
 .logo:hover {
   filter: drop-shadow(0 0 2em #0a107aaa);
 }
@@ -52,14 +53,20 @@ header {
   gap: 20px;
   width: 100%;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-between; 
   position: fixed; 
-  top: -10px;       
+  top: 0; 
   left: 0;
-  z-index: 1000; 
-  justify-content: center;
-  padding: 20px 0;
-  height: 100px;
+  z-index: 1000;
+  padding: 10px 20px;
+  height: 80px; 
+}
+
+.reactions-head, .sports-head, .entertainment-head, .stickers-head, .artists-head, .upload, .create, .login, .register, .favorites{
+  font-size: 0.8rem;
+  color: #fff;
+  text-align: center;
+  margin: 0;
 }
 
 
@@ -127,7 +134,7 @@ nav a.active {
   background: none;
   border: none;
   font-size: 2rem;
-  color: rgb(206, 22, 190);
+  color: rgb(206, 22, 120);
   cursor: pointer;
   padding: 5px;
   border-radius: 50%;
@@ -149,6 +156,7 @@ nav a.active {
 header {
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
 }
+
 
 
 .reactions-head, .sports-head, .entertainment-head, .stickers-head, .artists-head, .upload, .create {
@@ -213,6 +221,10 @@ nav a {
   padding: 12px 25px; 
   border-radius: 15px; 
 }
+.more-options-wrapper {
+  position: relative;
+  display: inline-block;
+}
 
 .more-options-button {
   background: none;
@@ -228,6 +240,36 @@ nav a {
 
 .more-options-button:hover {
   background-color: rgba(168, 60, 136, 0.8);
+}
+
+.more-options-dropdown {
+  display: none;
+  position: absolute;
+  top: 55px; 
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.95);
+  border: 1px solid rgb(206, 22, 190);
+  border-radius: 10px;
+  padding: 10px;
+  z-index: 10000;
+  min-width: 160px;
+}
+
+.more-options-dropdown a {
+  display: block;
+  padding: 8px 12px;
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.2s;
+}
+
+.more-options-dropdown a:hover {
+  background-color: rgba(168, 60, 136, 0.7);
+}
+
+.more-options-wrapper:hover .more-options-dropdown {
+  display: block;
 }
 
 
@@ -423,7 +465,7 @@ h2 {
   top: 110px; 
   left: 16%; 
   right: 0%; 
-  z-index: 9999; 
+  z-index: 100;
   padding: -5px; 
   background-color: #eff1f1ba; 
   margin-right: auto; 
@@ -535,6 +577,7 @@ section {
 .auth-buttons .login,
 .auth-buttons .register {
   margin: 0; 
+  left: 20px;
 }
 
 .login {
@@ -664,4 +707,6 @@ section {
 .upload-container p {
   color:#044387;
 }
+
+
 

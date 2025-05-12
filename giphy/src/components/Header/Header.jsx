@@ -1,11 +1,12 @@
-import { useContext} from "react";
+import { useContext } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { AppContext } from "../../services/state/AppContext";
 import { logoutUser } from "../../services/auth.service";
+import Menu from "../../views/Menu/Menu";
 export default function Header() {
     const { user, userData, setAppState } = useContext(AppContext);
     const navigate = useNavigate();
-    
+
 
     const logout = () => {
         logoutUser()
@@ -40,8 +41,11 @@ export default function Header() {
                         <NavLink to="/Sports" className="sports-head">Sports</NavLink>
                         <NavLink to="/Stickers" className="stickers-head">Stickers</NavLink>
                         <NavLink to="/Artists" className="artists-head">Artists</NavLink>
-                        <button className="more-options-button">⋮</button>
-                        <div className="more-options-line"></div>
+                        <div className="more-options-wrapper">
+                            <button className="more-options-button">⋮</button>
+                            <Menu />
+                        </div>
+
                         <NavLink to='/upload' className='upload'>Upload</NavLink>
                         <NavLink to='/create' className='create'>Create</NavLink>
                         <NavLink to='/favorites' className='favorites'>Favorites</NavLink>

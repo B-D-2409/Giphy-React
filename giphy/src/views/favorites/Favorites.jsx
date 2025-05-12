@@ -29,7 +29,7 @@ export default function Favorites() {
         fetchFavorites();
     }, [API_KEY])
 
-  
+
     
     return (
         <div>

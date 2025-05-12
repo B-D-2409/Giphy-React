@@ -19,6 +19,7 @@ import { onAuthStateChanged } from 'firebase/auth';
 import { auth } from './config/firebase.config';
 import Favorites from './views/favorites/Favorites';
 import SingleGif from './views/single-gif/SingleGif';
+import Menu from './views/Menu/Menu';
 function App() {
   const [gifs, setGifs] = useState([]); 
 
@@ -50,6 +51,7 @@ function App() {
           <Route path="/Sports" element={<Authenticated><Sports gifs={gifs} /></Authenticated>} />
           <Route path="/Stickers" element={<Authenticated><Stickers gifs={gifs}/></Authenticated>} />
           <Route path="/Artists" element={<Authenticated><Artists gifs={gifs}/></Authenticated>} />
+          <Route path="/Menu" element={<Authenticated><Menu/></Authenticated>} />
           <Route path='/Upload' element={<Authenticated><Upload gifs={gifs}/></Authenticated>} />
           <Route path="/Create" element={<Authenticated><Create gifs={gifs}/></Authenticated>} />
           <Route path="/favorites" element={<Authenticated><Favorites gifs={gifs}/></Authenticated>} />
