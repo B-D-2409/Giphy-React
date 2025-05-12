@@ -115,7 +115,7 @@ nav a:hover {
 
 
 nav a.active {
-  background-color: #07772c;
+  background-color: #07772c !important
 }
 .nav-link.active {
   background-color: #007bff !important;
@@ -664,3 +664,4 @@ section {
 .upload-container p {
   color:#044387;
 }
+

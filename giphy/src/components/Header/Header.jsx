@@ -2,10 +2,10 @@ import { useContext} from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { AppContext } from "../../services/state/AppContext";
 import { logoutUser } from "../../services/auth.service";
-
 export default function Header() {
     const { user, userData, setAppState } = useContext(AppContext);
     const navigate = useNavigate();
+    
 
     const logout = () => {
         logoutUser()

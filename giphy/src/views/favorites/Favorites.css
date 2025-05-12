@@ -1,15 +1,11 @@
 .favorites-container {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 50px;
-    margin-top: 50px;
-}
-
-.favorites-container h2 {
-    font-size: 54px;
-    margin-bottom: 20px;
-    color: #7307b1;
+    flex-wrap: wrap;
+    gap: 20px 20px;
+    justify-content: center;
+    padding: 20px;
+    z-index: 10; 
+    margin-top: 125px;
 }
 
 .favorites {
@@ -18,8 +14,9 @@
     background-clip: text;
     color: transparent;
     padding-bottom: 0px;
- 
 }
+
+
 
 .favorites::after {
     content: "";
@@ -30,6 +27,23 @@
     height: 5px;
     margin-top: 5px;
     background: linear-gradient(to right, #6328c3, #5e149b, #9933ff, #852ea3, #650d5d); 
-  }
+}
 
-  
+
+.favorites-gif {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    z-index: 20;
+}
+
+.favorites-gif img {
+    border-radius: 10px;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    z-index: 20;
+    transform: scale(1.1);
+}

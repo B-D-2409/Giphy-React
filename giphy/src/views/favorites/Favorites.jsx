@@ -34,7 +34,6 @@ export default function Favorites() {
     return (
         <div>
             <div className="favorites-container">
-                <h2>Favorites</h2>
                 {favorites.length > 0 ? (
         
                     favorites.map((gif) => (
