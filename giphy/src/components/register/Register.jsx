@@ -1,4 +1,4 @@
-import { useState, useContext, lazy } from "react";
+import { useState, useContext } from "react";
 import { AppContext } from "../../services/state/AppContext";
 import { useNavigate } from "react-router-dom";
 import { registerUser } from "../../services/auth.service.js";
@@ -34,8 +34,14 @@ export default function Register() {
                 return createUserHandle(user.handle, firebaseUser.uid, user.email, user.firstName, user.lastName)
                     .then(() => {
                         setAppState({
+                            uid: firebaseUser.uid,
                             user: firebaseUser,
-                            userData: null
+                            userData: {
+                                handle: user.handle,
+                                email: user.email,
+                                firstName: user.firstName,
+                                lastName: user.lastName,
+                            }
                         });
 
                         navigate('/');
