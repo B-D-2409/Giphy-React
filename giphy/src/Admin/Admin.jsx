@@ -36,9 +36,6 @@ export const Admin = () => {
         }
     }
 
-    const handleSearch = (e) => {
-        setSearchUser(e.target.value);
-    }
 
     const handleBlock = async (uid) => {
         try {
@@ -74,7 +71,7 @@ export const Admin = () => {
         <div className="admin-wrapper">
             <h1 className="admin-title">Administration Hub</h1>
             <p>Welcome {userData.adminDetails?.firstName} {userData.adminDetails?.lastName}</p>
-    
+
             <h3>All Users</h3>
             <input
                 type="text"
@@ -82,25 +79,25 @@ export const Admin = () => {
                 value={searchUser}
                 onChange={(e) => setSearchUser(e.target.value)}
             />
-    
-    <ul>
-  {filteredUsers.map(([uid, user]) => (
-    <li key={uid}>
-      <span>{user.displayName} ({user.email})</span>
-      <div className="admin-buttons">
-        {user.isBlocked ? (
-          <button onClick={() => handleUnblock(uid)}>Unblock</button>
-        ) : (
-          <button onClick={() => handleBlock(uid)}>Block</button>
-        )}
-        <button onClick={() => handleDelete(uid)}>Delete</button>
-      </div>
-    </li>
-  ))}
-</ul>
+
+            <ul>
+                {filteredUsers.map(([uid, user]) => (
+                    <li key={uid}>
+                        <span>{user.displayName} ({user.email})</span>
+                        <div className="admin-buttons">
+                            {user.isBlocked ? (
+                                <button onClick={() => handleUnblock(uid)}>Unblock</button>
+                            ) : (
+                                <button onClick={() => handleBlock(uid)}>Block</button>
+                            )}
+                            <button onClick={() => handleDelete(uid)}>Delete</button>
+                        </div>
+                    </li>
+                ))}
+            </ul>
 
         </div>
     )
-    
+
 
 }
