@@ -26,12 +26,11 @@ export const getUserData = async (uid) => {
 };
 
 
-
 export const addGifToFavorites = async (gif) => {
     const userId = getAuth().currentUser?.uid;
     if (!userId) throw new Error("User not authenticated");
 
-    await set(ref(db, `users/${userId}/favorites/${gif.id}`), gif);
+    await set(ref(db, `favorites/${userId}/${gif.id}`), gif);
 };
 
 
@@ -39,13 +38,14 @@ export const getFavorites = async () => {
     const userId = getAuth().currentUser?.uid;
     if (!userId) return [];
 
-    const snapshot = await get(ref(db, `users/${userId}/favorites`));
+    const snapshot = await get(ref(db, `favorites/${userId}`));
     return snapshot.exists() ? Object.values(snapshot.val()) : [];
 };
+
 
 export const deleteFavoriteGif = async (gifId) => {
     const userId = getAuth().currentUser?.uid;
     if (!userId) throw new Error("User not authenticated");
 
-    await remove(ref(db, `users/${userId}/favorites/${gifId}`));
+    await remove(ref(db, `favorites/${userId}/${gifId}`));
 };
