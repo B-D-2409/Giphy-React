@@ -93,10 +93,9 @@ export default function Header() {
                             {!user && <NavLink to='/register' className='register'>Register</NavLink>}
                             {!user && <NavLink to='/login' className='login'>Login</NavLink>}
                         </div>
-
-                        <NavLink to="/admin" className="admin-link">
-                            Admin
-                        </NavLink>
+                        {userData?.isAdmin && (
+                            <NavLink to="/admin" className="admin-link">Admin</NavLink>
+                        )}
 
                     </nav>
                     {user && <button className="logout" onClick={logout}>Logout</button>}
