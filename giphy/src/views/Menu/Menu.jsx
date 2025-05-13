@@ -1,35 +1,25 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
+
 export default function Menu() {
-const [hovered, setHovered] = useState(false);
-const [showHelp, setShowHelp] = useState(false);
+    const [isOpen, setIsOpen] = useState(false);
 
-useEffect(() => {
-    const handleMouseEnter = () => {
-        setHovered(true);
+    const toggleMenu = () => {
+        setIsOpen(!isOpen);
     };
-
-    const handleMouseLeave = () => {
-        setHovered(false);
-    };
-
-    window.addEventListener("mouseenter", handleMouseEnter);
-    window.addEventListener("mouseleave", handleMouseLeave);
-
-    return () => {
-        window.removeEventListener("mouseenter", handleMouseEnter);
-        window.removeEventListener("mouseleave", handleMouseLeave);
-    };
-},[]);
-
-
-    
 
     return (
-        <div className="more-options-dropdown">
-            <a href="/profile">Profile</a>
-            <a href="/settings">Settings</a>
-            <a href="/help" >Help</a>
+        <div className={`more-options-wrapper ${isOpen ? "open" : ""}`}>
+            <button onClick={toggleMenu} className="more-options-button">
+                ⋮
+            </button>
+
+            {isOpen && (
+                <div className="more-options-dropdown">
+                    <a href="/profile">Profile</a>
+                    <a href="/settings">Settings</a>
+                    <a href="/help">Help</a>
+                </div>
+            )}
         </div>
     );
 }
-

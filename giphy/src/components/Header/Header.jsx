@@ -36,55 +36,55 @@ export default function Header() {
                         <a href="/">Giphy</a>
                     </div>
                     <nav>
-                        <NavLink 
-                            to="/Reactions" 
+                        <NavLink
+                            to="/Reactions"
                             className={({ isActive }) => (isActive ? "active" : "reactions-head")}
                         >
                             Reactions
                         </NavLink>
-                        <NavLink 
-                            to="/Entertainment" 
+                        <NavLink
+                            to="/Entertainment"
                             className={({ isActive }) => (isActive ? "active" : "entertainment-head")}
                         >
                             Entertainment
                         </NavLink>
-                        <NavLink 
-                            to="/Sports" 
+                        <NavLink
+                            to="/Sports"
                             className={({ isActive }) => (isActive ? "active" : "sports-head")}
                         >
                             Sports
                         </NavLink>
-                        <NavLink 
-                            to="/Stickers" 
+                        <NavLink
+                            to="/Stickers"
                             className={({ isActive }) => (isActive ? "active" : "stickers-head")}
                         >
                             Stickers
                         </NavLink>
-                        <NavLink 
-                            to="/Artists" 
+                        <NavLink
+                            to="/Artists"
                             className={({ isActive }) => (isActive ? "active" : "artists-head")}
                         >
                             Artists
                         </NavLink>
                         <div className="more-options-wrapper">
-                            <button className="more-options-button">⋮</button>
                             <Menu />
                         </div>
 
-                        <NavLink 
-                            to='/upload' 
+
+                        <NavLink
+                            to='/upload'
                             className={({ isActive }) => (isActive ? "active" : "upload")}
                         >
                             Upload
                         </NavLink>
-                        <NavLink 
-                            to='/create' 
+                        <NavLink
+                            to='/create'
                             className={({ isActive }) => (isActive ? "active" : "create")}
                         >
                             Create
                         </NavLink>
-                        <NavLink 
-                            to='/favorites' 
+                        <NavLink
+                            to='/favorites'
                             className={({ isActive }) => (isActive ? "active" : "favorites")}
                         >
                             Favorites

@@ -211,10 +211,8 @@ nav a {
   padding: 12px 25px; 
   border-radius: 15px; 
 }
-.more-options-wrapper {
-  position: relative;
-  display: inline-block;
-}
+
+
 
 .more-options-button {
   background: none;
@@ -228,15 +226,35 @@ nav a {
   margin-left: -20px;
 }
 
+
 .more-options-button:hover {
-  background-color: rgba(168, 60, 136, 0.8);
+  background-color: transparent;
+}
+
+
+
+.more-options-wrapper {
+  position: relative; 
+}
+
+
+.more-options-button {
+  background: none;
+  border: none;
+  font-size: 2.5rem; 
+  color: rgb(206, 22, 190);
+  cursor: pointer;
+  padding: 10px 15px; 
+  border-radius: 10px; 
+  transition: background-color 0.3s ease;
+  margin-left: -20px;
 }
 
 .more-options-dropdown {
-  display: none;
-  position: absolute;
-  top: 55px; 
-  right: 0;
+  display: none; 
+  position: absolute; 
+  top: 100%; 
+  left: 0; 
   background-color: rgba(0, 0, 0, 0.95);
   border: 1px solid rgb(206, 22, 190);
   border-radius: 10px;
@@ -244,6 +262,7 @@ nav a {
   z-index: 10000;
   min-width: 160px;
 }
+
 
 .more-options-dropdown a {
   display: block;
@@ -258,9 +277,24 @@ nav a {
   background-color: rgba(104, 10, 167, 0.7);
 }
 
-.more-options-wrapper:hover .more-options-dropdown {
-  display: block;
+
+.more-options-wrapper.open .more-options-dropdown {
+  display: block; 
 }
+
+
+.more-options-wrapper.open .more-options-dropdown {
+  left: 0; 
+  right: auto; 
+}
+
+
+.more-options-wrapper.open .more-options-dropdown {
+  right: 0; 
+  left: auto; 
+}
+
+
 
 .more-options-button {
   position: relative;
@@ -271,6 +305,7 @@ nav a {
   padding-bottom: 10px;
   left: 70%;
 }
+
 
 .more-options-button::after {
   content: "";
@@ -283,6 +318,7 @@ nav a {
   background: linear-gradient(to right, #6328c3, #5e149b, #9933ff, #852ea3, #650d5d);
   border-radius: 2px;
 }
+
 
 
 
@@ -670,7 +706,6 @@ section {
   border-radius: 8px;
   color: #044387;
   
-
 }
 
 
