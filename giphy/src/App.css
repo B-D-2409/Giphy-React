@@ -621,7 +621,10 @@ section {
 
 .logout{
   background-image: linear-gradient(to left, #6328c3, #5e149b, #9933ff, #852ea3, #650d5d);
-  color: snow !important
+  color: snow !important;
+  margin-left: -20px;
+  margin-bottom: -10px;
+
 }
 
 
@@ -709,7 +712,7 @@ section {
 
 .nav-wrapper nav a.active {
   color: #ff4a09;
-  background: #28c4f0; /* Син фон */
+  background: #28c4f0; 
   transition: background-color 0.8s ease, color 0.8s ease; 
 }
 
@@ -721,4 +724,8 @@ section {
   border-radius: 8px;
   padding: 5px 10px;
   transition: background-color 0.1s ease;
+}
+
+.welcome{
+  margin-left: -20px;
 }
