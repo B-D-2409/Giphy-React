@@ -100,7 +100,7 @@ export default function Header() {
 
                     </nav>
                     {user && <button className="logout" onClick={logout}>Logout</button>}
-                    {userData && <span className="welcome" >Welcome, {userData.handle}</span>}
+                    {userData && <span className="welcome" ></span>}
                 </div>
             </header>
         </>

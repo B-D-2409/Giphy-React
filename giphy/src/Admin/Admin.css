@@ -115,3 +115,11 @@ option {
 .admin-wrapper input::placeholder {
     color: rgb(9, 3, 70)
 }
+
+.admin-link {
+    background-image: linear-gradient(to left, #6328c3, #5e149b, #9933ff, #852ea3, #650d5d);
+    color: snow !important;
+    margin-left: 100%;
+    margin-bottom: -170px;
+    margin-top: -80px;;
+}

@@ -656,12 +656,17 @@ section {
 
 
 .logout{
+  display: flex;
+  align-items: center;
   background-image: linear-gradient(to left, #6328c3, #5e149b, #9933ff, #852ea3, #650d5d);
-  color: snow !important;
-  margin-left: -20px;
-  margin-bottom: -10px;
-
+  color: snow;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-right: 30px;
 }
+
 
 
 .upload-container{
@@ -761,9 +766,7 @@ section {
   transition: background-color 0.1s ease;
 }
 
-.welcome{
-  margin-left: -20px;
-}
+
 
 /* General styles for both pages */
 .container {
@@ -859,4 +862,19 @@ a {
 
 a:hover {
   text-decoration: underline;
+}
+
+.nav-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  flex-wrap: wrap;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  flex: 1;
 }
