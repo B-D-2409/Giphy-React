@@ -22,8 +22,14 @@ import SingleGif from './views/single-gif/SingleGif';
 import Menu from './views/Menu/Menu';
 import Help from './views/Help/help';
 import Faq from './views/Help/Faq';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { getUserData } from './services/users.service';
+import { getAdminData } from './services/admin.service';
+import { Admin } from './Admin/Admin';
+
 function App() {
   const [gifs, setGifs] = useState([]); 
+  const [user, loading, error] = useAuthState(auth);
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
@@ -32,15 +38,62 @@ function App() {
     return () => unsubscribe();
 }, []);
 
-
-
   const [appState, setAppState] = useState({
     user: null,
     userData: null,
   })
+
+  useEffect(() => {
+
+    if(!user) return;
+
+    setAppState(prev => ({
+      ...prev,
+      user,
+    }))
+
+    getUserData(user.uid)
+    .then(async (data) => {
+      if(!data || Object.keys(data).length === 0) {
+        console.log('No user data found');
+        return;
+      }
+
+      const userData = data[Object.keys(data)[0]];
+      const adminData = await getAdminData(user.uid);
+
+      const isAdmin = adminData ? adminData.isAdmin : false;
+
+      setAppState((prev) => ({
+        ...prev,
+        userData: {
+          ...userData,
+          isAdmin,
+          adminDetails: adminData,
+        },
+      }))
+    })
+    .catch((err) => {
+      console.error('Error fetching user data', err);
+    })
+
+  },[user])
+
+  if (loading) {
+    return <div className="loading">Loading...</div>;
+  }
+
+  if (error) {
+    console.error(error);
+    return <div className="error">Error: {error.message}</div>;
+  }
   return (
     <BrowserRouter>
-      <AppContext.Provider value={{...appState, setAppState}}>
+      <AppContext.Provider    value={{
+          user: appState.user,
+          userData: appState.userData,
+          setAppState,
+        }}>
         <Header />
         <div className="search-container">
           <SearchBar onResults={setGifs} /> 
@@ -62,6 +115,7 @@ function App() {
           <Route path="/single-gif/:id" element={<Authenticated><SingleGif /></Authenticated>} />
           <Route path='/login' element={<Login />} />
           <Route path='/register' element={<Register />} />
+          <Route path='/admin' element={<Authenticated><Admin /></Authenticated>} />
         </Routes>
       </AppContext.Provider>
     </BrowserRouter>

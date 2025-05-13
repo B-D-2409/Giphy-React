@@ -1,0 +1,117 @@
+.admin-wrapper {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #1a0252;
+    color: rgb(37, 34, 55);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.admin-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: #edeff1;
+    text-align: center;
+}
+
+.admin-wrapper h3 {
+    margin-top: 2rem;
+    font-size: 1.5rem;
+    color: #ebecee;
+}
+
+.admin-wrapper input[type="text"] {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    margin: 1rem 0;
+    border: 1px solid #f3f3f6;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border 0.3s;
+    color: white;
+    margin-left: -10px;
+    background-color: #3182CE;
+}
+
+.admin-wrapper input[type="text"]:focus {
+    border-color: #3182CE;
+    outline: none;
+
+}
+
+.admin-wrapper select {
+    padding: 0.5rem;
+    font-size: 1rem;
+    border-radius: 8px;
+    border: 1px solid #CBD5E0;
+    margin-bottom: 1rem;
+}
+
+.admin-wrapper ul {
+    list-style: none;
+    padding: 0;
+}
+
+.admin-wrapper li {
+    background-color: #F7FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.admin-wrapper li span {
+    max-width: 60%;
+    word-break: break-word;
+}
+
+.admin-buttons {
+    display: flex;
+    gap: 0.5rem;
+    flex-shrink: 0;
+}
+
+.admin-wrapper button:hover {
+    background-color: #df4706;
+}
+
+.admin-wrapper button {
+    background-color: rgb(41, 153, 238);
+}
+
+
+.admin-search {
+    color: white;
+}
+
+
+
+
+select {
+    color: white;
+    background-color: #ede9e9;
+    border: 1px solid #555;
+    padding: 5px 10px;
+    border-radius: 4px;
+}
+
+
+option {
+    color: rgb(255, 255, 255);
+    background-color: #333;
+}
+
+.admin-wrapper p {
+    color: white;
+}
+
+.admin-wrapper input::placeholder {
+    color: rgb(9, 3, 70)
+}
