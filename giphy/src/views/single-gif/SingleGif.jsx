@@ -5,6 +5,8 @@ import './SingleGif.css';
 export default function SingleGif() {
     const { id } = useParams();
     const [single, setSingle] = useState(null); 
+    const [isFavorite, setIsFavorite] = useState(false);
+
 
     const API_KEY = import.meta.env.VITE_GIPHY_API_KEY;
 
@@ -24,14 +26,12 @@ export default function SingleGif() {
     }, [id]);
 
     const handleFavorite = async () => {
-        
         try {
             await addGifToFavorites(single);
-            alert("gif was added to favorite!");
+            setIsFavorite(true);
         } catch (error) {
             console.error("Error with add favorite gif:", error);
         }
-    
     }
 
     const handleCopyLink = () => {
@@ -62,7 +62,7 @@ export default function SingleGif() {
             console.error("Error downloading gif:", error);
         }
     };
-    
+
 
 
     if (!single || !single.images) return <p>Loading...</p>;
@@ -81,7 +81,8 @@ export default function SingleGif() {
             <div className="gif-side actions">
                 <div className="gif-detail-actions">
                     <button id="favorite-btn" onClick={handleFavorite}>
-                        Favorite
+                        {isFavorite ? 'Favorited' : 'Favorite'}
+
                     </button>
                     <button id="copy-link-btn" onClick={handleCopyLink}>
                         Copy Link

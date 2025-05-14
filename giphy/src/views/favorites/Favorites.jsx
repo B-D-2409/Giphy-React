@@ -44,7 +44,7 @@ export default function Favorites() {
                     favorites.map((gif) => (
                         <div className="favorites-gif" key={gif.id}>
                             <img src={gif.images.fixed_height.url} alt={gif.title} />
-                            <button className="remove-favorite" onClick={() => deleteFavorite(gif.id)}>❌</button>
+                            <button className="remove-favorite" onClick={() => deleteFavorite(gif.id)}>💖</button>
                         </div>
                     ))
                 ) : randomGif ? (
