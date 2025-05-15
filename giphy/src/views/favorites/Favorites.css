@@ -1,31 +1,31 @@
 .favorites-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px 20px;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
     padding: 20px;
-    z-index: 10; 
-    margin-top: 135px;
-}
-
-.favorites {
+    margin-top: 130px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+  }
+  
+  .favorites {
     background: linear-gradient(to right, #28a745, #ffc107);
     -webkit-text-fill-color: transparent;
     background-clip: text;
     color: transparent;
     padding-bottom: 0px;
-}
-
-.favorites:hover{
+  }
+  
+  .favorites:hover {
     background: linear-gradient(to right, #9933ff, #3316ed); 
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-
-
-.favorites::after {
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .favorites::after {
     content: "";
     display: block;
     position: relative;
@@ -34,24 +34,52 @@
     height: 5px;
     margin-top: 5px;
     background: linear-gradient(to right, #6328c3, #5e149b, #9933ff, #852ea3, #650d5d); 
-}
-
-
-.favorites-gif {
+  }
+  
+  .favorites-gif {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     transition: transform 0.3s ease;
     cursor: pointer;
-    z-index: 20;
-}
-
-.favorites-gif img {
+    background-color: #24dbf3;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .favorites-gif img {
     border-radius: 10px;
     width: 200px;
     height: 200px;
     object-fit: cover;
-    z-index: 20;
-    transform: scale(1.1);
-}
+    transition: transform 0.3s ease;
+  }
+  
+  .favorites-gif img:hover {
+    transform: scale(1.05);
+  }
+  
 
+  .favorites-gif button {
+    padding: 6px 12px;
+    border: none;
+    border-radius: 8px;
+    background-image: linear-gradient(to left, #7c057c, #852ea3);
+    color: #ff4a09;
+    font-size: 14px; 
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.5s ease, transform 0.15s ease;
+    width: 100%;
+    max-width: 160px;
+    border: 1px solid black;
+  }
+  
+  .favorites-gif button:hover {
+    background-image: linear-gradient(to left, #6328c3, #5e149b, #9933ff, #852ea3, #650d5d);
+    transform: scale(1.05);
+  }
+  

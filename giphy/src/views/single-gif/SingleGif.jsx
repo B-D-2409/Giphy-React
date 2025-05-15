@@ -36,7 +36,7 @@ export default function SingleGif() {
         }
     }
 
-    const handleCopyLink = () => {
+   const handleCopyLink = () => {
         const link = single?.images?.original?.url || '';
         navigator.clipboard.writeText(link)
             .then(() => {
@@ -92,7 +92,7 @@ export default function SingleGif() {
                         {isCopied ? 'Copied' : 'Copy'}
                     
                     </button>
-                    <button id="back-btn" onClick={handleDownload}>
+                    <button id="downloaded" onClick={handleDownload}>
                         {isDownloaded ?  'Downloaded' : 'Download'}
                     
                     </button>
