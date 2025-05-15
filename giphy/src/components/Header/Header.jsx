@@ -3,6 +3,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 import { AppContext } from "../../services/state/AppContext";
 import { logoutUser } from "../../services/auth.service";
 import Menu from "../../views/Menu/Menu";
+import Profile from "../../views/Profile/Profile";
 export default function Header() {
     const { user, userData, setAppState } = useContext(AppContext);
     const navigate = useNavigate();
@@ -67,8 +68,13 @@ export default function Header() {
                             Artists
                         </NavLink>
                         <div className="more-options-wrapper">
-                            <Menu />
+                            <Menu>
+                                <Profile />
+                                </Menu> 
                         </div>
+
+                    
+
 
 
                         <NavLink

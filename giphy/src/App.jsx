@@ -26,6 +26,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { getUserData } from './services/users.service';
 import { getAdminData } from './services/admin.service';
 import { Admin } from './Admin/Admin';
+import Profile from './views/Profile/Profile';
 
 function App() {
   const [gifs, setGifs] = useState([]); 
@@ -109,6 +110,7 @@ function App() {
           <Route path="/Menu" element={<Authenticated><Menu/></Authenticated>} />
           <Route path='/Help' element={<Help  />} />
           <Route path="/faq" element={<Faq />} />
+          <Route path='/profile' element={<Profile/>} />
           <Route path='/Upload' element={<Authenticated><Upload gifs={gifs}/></Authenticated>} />
           <Route path="/Create" element={<Authenticated><Create gifs={gifs}/></Authenticated>} />
           <Route path="/favorites" element={<Authenticated><Favorites gifs={gifs}/></Authenticated>} />

@@ -49,3 +49,18 @@ export const deleteFavoriteGif = async (gifId) => {
 
     await remove(ref(db, `favorites/${userId}/${gifId}`));
 };
+
+export const getProfileData = async (uid,firstName,lastName) => {
+    const snapshot = await get(query(ref(db, 'users'), orderByChild('uid'),equalTo(uid)));
+
+    if(snapshot.exists()){
+        const users = snapshot.val();
+        const user = Object.keys(users)[0];
+        const userRef = ref(db, `users/${user}`);
+        await set(userRef, {
+            ...users[user],
+            firstName,
+            lastName,
+        })
+    }
+}

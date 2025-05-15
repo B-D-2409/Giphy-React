@@ -1,0 +1,111 @@
+.profile-container {
+    max-width: 500px;
+    margin: 100px auto;
+    padding: 55px;
+    background-color: #0d0602c8;
+    border-radius: 20px;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
+}
+
+.profile-container.edit-mode {
+    max-width: 700px;
+    padding: 40px;
+}
+
+/* Заглавие */
+.profile-container h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #12d5d8;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Статичен изглед */
+.profile-info {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.profile-info h2 {
+    font-size: 2rem;
+    color: #b58c40;
+    margin-bottom: 10px;
+}
+
+.profile-info p {
+    color: #eee;
+    font-size: 1.1rem;
+}
+
+.profile-info button {
+    width: 100%;
+    margin-top: 20px;
+    padding: 15px;
+    font-size: 2.3rem;
+    font-weight: bold;
+    color: #12d5d8;
+    background: linear-gradient(to right, #444, #222);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.profile-info button:hover {
+    background: linear-gradient(to right, #222, #444);
+    transform: scale(1.05);
+}
+
+/* Формата за редакция */
+.profile-edit {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 25px 0;
+}
+
+/* Полета за въвеждане */
+.profile-edit input {
+    width: 100%;
+    padding: 15px;
+    margin: 15px 0;
+    font-size: 1.2rem;
+    border: 2px solid #333;
+    border-radius: 8px;
+    background-color: #1e1e1e;
+    color: #eee;
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.profile-edit input:focus {
+    border-color: #555;
+    box-shadow: 0 0 10px rgba(85, 85, 85, 0.6);
+}
+
+/* Бутоните Save и Cancel */
+.profile-edit-buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.profile-edit-buttons button {
+    flex: 1;
+    padding: 15px;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #12d5d8;
+    background: linear-gradient(to right, #444, #222);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.profile-edit-buttons button:hover {
+    background: linear-gradient(to right, #222, #444);
+    transform: scale(1.05);
+}
