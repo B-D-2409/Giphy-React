@@ -6,6 +6,8 @@ export default function SingleGif() {
     const { id } = useParams();
     const [single, setSingle] = useState(null); 
     const [isFavorite, setIsFavorite] = useState(false);
+    const [isCopied, setIsCopied] = useState(false);
+    const [isDownloaded, setIsDownloaded] = useState(false);
 
 
     const API_KEY = import.meta.env.VITE_GIPHY_API_KEY;
@@ -38,7 +40,8 @@ export default function SingleGif() {
         const link = single?.images?.original?.url || '';
         navigator.clipboard.writeText(link)
             .then(() => {
-                alert("Link copied to clipboard!");
+                setIsCopied(true);
+    
             })
             .catch((error) => {
                 console.error("Error copying link:", error);
@@ -58,6 +61,7 @@ export default function SingleGif() {
             a.click();
             document.body.removeChild(a);
             URL.revokeObjectURL(url);
+            setIsDownloaded(true);
         } catch (error) {
             console.error("Error downloading gif:", error);
         }
@@ -85,10 +89,12 @@ export default function SingleGif() {
 
                     </button>
                     <button id="copy-link-btn" onClick={handleCopyLink}>
-                        Copy Link
+                        {isCopied ? 'Copied' : 'Copy'}
+                    
                     </button>
                     <button id="back-btn" onClick={handleDownload}>
-                        Download
+                        {isDownloaded ?  'Downloaded' : 'Download'}
+                    
                     </button>
                 </div>
             </div>
