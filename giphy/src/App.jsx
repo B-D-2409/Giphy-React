@@ -28,6 +28,7 @@ import { getAdminData } from './services/admin.service';
 import { Admin } from './Admin/Admin';
 import Profile from './views/Profile/Profile';
 import Settings from './views/Settings/Settings';
+
 function App() {
   const [gifs, setGifs] = useState([]); 
   const [user, loading, error] = useAuthState(auth);

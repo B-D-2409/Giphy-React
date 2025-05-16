@@ -3,7 +3,7 @@ import { AppContext } from "../../services/state/AppContext";
 import { useNavigate } from "react-router-dom";
 import { registerUser } from "../../services/auth.service.js";
 import { createUserHandle, getUserByHandle } from '/src/services/users.service.js';
-
+import { sendEmailVerification } from "firebase/auth";
 export default function Register() {
     const [user, setUser] = useState({
         handle: '',
@@ -31,6 +31,16 @@ export default function Register() {
             .then((credentials) => {
                 const { user: firebaseUser } = credentials;
 
+            
+                
+                sendEmailVerification(firebaseUser)
+                .then(() => {
+                    console.log('Email verification sent! Check your inbox.');
+                })
+                .catch((error) => {
+
+                    console.error("Error sending email verification:", error);
+                })
                 return createUserHandle(user.handle, firebaseUser.uid, user.email, user.firstName, user.lastName)
                     .then(() => {
                         setAppState({
