@@ -671,17 +671,24 @@ section {
 
 .upload-container{
   display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 50px;
+    
+
     width: 1000px;
     height: 900px;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-    justify-content: center;
+    margin: 147px auto 0 auto;
+
     background-color: #6157ff;
+    background-image: linear-gradient(to left, #852ea3, #9933ff);
+
     border-radius: 40px;
     padding: 20px;
-    background-image: linear-gradient(to left,  #852ea3, #9933ff);
-    margin-top: 147px;
+
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color: #044387;
 }
 
 .upload-button-container p{

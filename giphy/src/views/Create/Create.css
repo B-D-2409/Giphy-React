@@ -1,0 +1,244 @@
+.createGif {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 50px;
+    
+
+    width: 1000px;
+    height: 900px;
+    margin: 147px auto 0 auto;
+
+    background-color: #6157ff;
+    background-image: linear-gradient(to left, #852ea3, #9933ff);
+
+    border-radius: 40px;
+    padding: 20px;
+
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color: #044387;
+}
+
+
+.create-form h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: #c3c0c7;
+    text-align: center;
+}
+
+
+.create-container {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.create-container p {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+
+
+#createGif input[type="file"],
+.create-container input[type="file"] {
+  background-color: transparent; 
+  border: 1px solid #555;
+  padding: 0.6rem 1rem;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 600px;
+  color: #ccc;
+  cursor: pointer;
+  transition: border-color 0.3s;
+}
+
+.create-container input[type="file"]:hover {
+    border-color: #f1f0f2;
+}
+
+
+.create-button {
+    background: linear-gradient(90deg, #7f39fb, #bb86fc);
+    color: white;
+    border: none;
+    padding: 0.8rem 2rem;
+    border-radius: 14px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: background 0.4s ease;
+}
+
+.create-button:hover {
+    background: linear-gradient(90deg, #9c6fff, #d3b8ff);
+}
+
+
+#created-files-container {
+    margin-top: 0rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+
+}
+
+
+.upload-card {
+    background-color: #1f1f1f;
+    border-radius: 16px;
+    padding: 1.5rem;
+    width: 350px;
+    box-shadow: 0 0 15px rgba(187, 134, 252, 0.6);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+
+.file-title {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #d0bcff;
+    overflow-wrap: anywhere;
+}
+
+
+.media-preview {
+    position: relative;
+    border-radius: 14px;
+    overflow: hidden;
+    max-height: 200px;
+    box-shadow: 0 0 10px #7f39fbaa;
+}
+
+.media-preview img,
+.media-preview video {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 14px;
+}
+
+.file-label {
+    position: absolute;
+    bottom: 8px;
+    left: 8px;
+    background-color: rgba(123, 31, 162, 0.8);
+    padding: 3px 10px;
+    font-size: 0.75rem;
+    border-radius: 8px;
+    font-weight: 600;
+    color: #eee;
+}
+
+
+.meta-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+
+.visibility-toggle {
+    display: flex;
+    justify-content: space-between;
+}
+
+.visibility-toggle label {
+    font-size: 0.95rem;
+    cursor: pointer;
+    color: #ccc;
+}
+
+.visibility-toggle input {
+    margin-right: 0.5rem;
+}
+
+
+.tag-section {
+    display: flex;
+    gap: 0.6rem;
+    align-items: center;
+}
+
+.tag-section input {
+    flex-grow: 1;
+    padding: 0.5rem;
+    border-radius: 10px;
+    border: 1px solid #444;
+    background-color: #2c2c2c;
+    color: #eee;
+    font-size: 1rem;
+}
+
+.tag-section button {
+    background-color: #7f39fb;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.tag-section button:hover {
+    background-color: #a574ff;
+}
+
+/* Source input */
+.source-input {
+    padding: 0.5rem;
+    border-radius: 10px;
+    border: 1px solid #444;
+    background-color: #2c2c2c;
+    color: #eee;
+    font-size: 1rem;
+}
+
+
+.collection-picker select {
+    width: 100%;
+    padding: 0.6rem;
+    border-radius: 10px;
+    background-color: #2c2c2c;
+    border: 1px solid #444;
+    color: #eee;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+
+.upload-card .upload-button {
+    margin-top: 1rem;
+    background: linear-gradient(90deg, #bb86fc, #7f39fb);
+    border: none;
+    padding: 0.9rem;
+    border-radius: 16px;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    width: 100%;
+    align-self: center;
+}
+
+.upload-card .upload-button:hover {
+    background: linear-gradient(90deg, #d3b8ff, #9c6fff);
+}
+
+input[type='file']::file-selector-button {
+    background-color: transparent;
+}
+
+.create-form h1 {
+    color: white;
+}
+
+.create-container p {
+    color: white;
+}

@@ -8,6 +8,15 @@
     margin-top: 100px; 
 }
 
+.gif-side.info {
+    border: 2px solid #bb86fc; 
+    padding: 20px;
+    border-radius: 16px;
+    background-color: rgba(8, 7, 7, 0.05); 
+    box-shadow: 0 0 10px rgba(150, 28, 150, 0.2); 
+    max-width: 500px;
+  }
+  
 .gif-side {
     flex: 0 0 280px; 
     display: flex;
