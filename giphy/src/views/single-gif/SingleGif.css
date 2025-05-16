@@ -3,22 +3,22 @@
     justify-content: center;
     align-items: center;
     gap: 60px;
-    padding: 40px 40px 60px; 
-    min-height: 80vh; 
-    margin-top: 100px; 
+    padding: 40px 40px 60px;
+    min-height: 80vh;
+    margin-top: 100px;
 }
 
 .gif-side.info {
-    border: 2px solid #bb86fc; 
+    border: 2px solid #bb86fc;
     padding: 20px;
     border-radius: 16px;
-    background-color: rgba(8, 7, 7, 0.05); 
-    box-shadow: 0 0 10px rgba(150, 28, 150, 0.2); 
+    background-color: rgba(8, 7, 7, 0.05);
+    box-shadow: 0 0 10px rgba(150, 28, 150, 0.2);
     max-width: 500px;
-  }
-  
+}
+
 .gif-side {
-    flex: 0 0 280px; 
+    flex: 0 0 280px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -26,14 +26,14 @@
 }
 
 .gif-center img {
-    max-width: 500px; 
+    max-width: 500px;
     height: auto;
     border-radius: 12px;
     border: 2px solid white;
 }
 
 .gif-side.info h1 {
-    font-size: 28px; 
+    font-size: 28px;
     color: #b947fa;
     text-align: center;
 }
@@ -58,7 +58,7 @@
     border-radius: 10px;
     background-image: linear-gradient(to left, #7c057c, #852ea3);
     color: white;
-    font-size: 18px; 
+    font-size: 18px;
     font-weight: 600;
     cursor: pointer;
     transition: background 0.25s ease, transform 0.15s ease;
