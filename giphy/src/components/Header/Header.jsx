@@ -4,6 +4,7 @@ import { AppContext } from "../../services/state/AppContext";
 import { logoutUser } from "../../services/auth.service";
 import Menu from "../../views/Menu/Menu";
 import Profile from "../../views/Profile/Profile";
+import Settings from "../../views/Settings/Settings";
 export default function Header() {
     const { user, userData, setAppState } = useContext(AppContext);
     const navigate = useNavigate();
@@ -70,6 +71,7 @@ export default function Header() {
                         <div className="more-options-wrapper">
                             <Menu>
                                 <Profile />
+                                <Settings />
                                 </Menu> 
                         </div>
 

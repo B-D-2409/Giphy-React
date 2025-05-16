@@ -27,7 +27,7 @@ import { getUserData } from './services/users.service';
 import { getAdminData } from './services/admin.service';
 import { Admin } from './Admin/Admin';
 import Profile from './views/Profile/Profile';
-
+import Settings from './views/Settings/Settings';
 function App() {
   const [gifs, setGifs] = useState([]); 
   const [user, loading, error] = useAuthState(auth);
@@ -110,6 +110,7 @@ function App() {
           <Route path="/Menu" element={<Authenticated><Menu/></Authenticated>} />
           <Route path='/Help' element={<Help  />} />
           <Route path="/faq" element={<Faq />} />
+          <Route path='/settings' element={<Authenticated><Settings gifs={gifs}/></Authenticated>} />
           <Route path='/profile' element={<Authenticated><Profile gifs={gifs}/></Authenticated>} />
           <Route path='/Upload' element={<Authenticated><Upload gifs={gifs}/></Authenticated>} />
           <Route path="/Create" element={<Authenticated><Create gifs={gifs}/></Authenticated>} />
