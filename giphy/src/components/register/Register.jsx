@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { registerUser } from "../../services/auth.service.js";
 import { createUserHandle, getUserByHandle } from '/src/services/users.service.js';
 import { sendEmailVerification } from "firebase/auth";
+import styles from './Register.module.css';
 export default function Register() {
     const [user, setUser] = useState({
         handle: '',
@@ -71,40 +72,40 @@ export default function Register() {
     };
 
     return (
-        <div className="register-container">
-            <h2>Register</h2>
+        <div className={styles.registerWrapper}>
+            <h2 className={styles.registerTitle}>Register</h2>
 
             <form onSubmit={register}>
-                <div className="name-fields">
-                <div>
-                    <label htmlFor="name">First Name:</label>
-                    <input
-                        value={user.firstName}
-                        onChange={updateUser('firstName')}
-                        type='text'
-                        id='firstName'
-                        name='firstName'
-                    />
-                </div>
-                <div>
-                    <label htmlFor='lastName'>Last Name</label>
-                    <input
-                        value={user.lastName}
-                        onChange={updateUser('lastName')}
-                        type='text'
-                        id='lastName'
-                        name='lastName'
-                    />
-                </div>
+                <div className={styles.nameFields}>
+                    <div>
+                        <label htmlFor="firstName">First Name:</label>
+                        <input
+                            value={user.firstName}
+                            onChange={updateUser('firstName')}
+                            type="text"
+                            id="firstName"
+                            name="firstName"
+                        />
+                    </div>
+                    <div>
+                        <label htmlFor="lastName">Last Name:</label>
+                        <input
+                            value={user.lastName}
+                            onChange={updateUser('lastName')}
+                            type="text"
+                            id="lastName"
+                            name="lastName"
+                        />
+                    </div>
                 </div>
                 <div>
                     <label htmlFor="handle">Username:</label>
                     <input
                         value={user.handle}
                         onChange={updateUser('handle')}
-                        type='text'
-                        id='handle'
-                        name='handle'
+                        type="text"
+                        id="handle"
+                        name="handle"
                     />
                 </div>
                 <div>
@@ -112,9 +113,9 @@ export default function Register() {
                     <input
                         value={user.email}
                         onChange={updateUser('email')}
-                        type='email'
-                        id='email'
-                        name='email'
+                        type="email"
+                        id="email"
+                        name="email"
                     />
                 </div>
                 <div>
@@ -122,12 +123,12 @@ export default function Register() {
                     <input
                         value={user.password}
                         onChange={updateUser('password')}
-                        type='password'
-                        id='password'
-                        name='password'
+                        type="password"
+                        id="password"
+                        name="password"
                     />
                 </div>
-                <div className="register-submit">
+                <div className={styles.submitButton}>
                     <button type="submit">Register</button>
                 </div>
             </form>

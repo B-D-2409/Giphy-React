@@ -5,6 +5,7 @@ import { logoutUser } from "../../services/auth.service";
 import Menu from "../../views/Menu/Menu";
 import Profile from "../../views/Profile/Profile";
 import Settings from "../../views/Settings/Settings";
+import './Header.module.css';
 export default function Header() {
     const { user, userData, setAppState } = useContext(AppContext);
     const navigate = useNavigate();
@@ -98,8 +99,8 @@ export default function Header() {
                             Favorites
                         </NavLink>
                         <div className="auth-buttons">
-                            {!user && <NavLink to='/register' className='register'>Register</NavLink>}
-                            {!user && <NavLink to='/login' className='login'>Login</NavLink>}
+                            {!user && <NavLink to='/register' className='nav-register'>Register</NavLink>}
+                            {!user && <NavLink to='/login' className='nav-login'>Login</NavLink>}
                         </div>
                         {userData?.isAdmin && (
                             <NavLink to="/admin" className="admin-link">Admin</NavLink>

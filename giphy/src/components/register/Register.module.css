@@ -1,0 +1,65 @@
+.registerWrapper {
+  max-width: 500px;
+  margin: 100px auto;
+  padding: 55px;
+  background-color: #0d0602c8;
+  border-radius: 20px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+}
+
+.registerWrapper input {
+  width: 100%;
+  padding: 15px;
+  margin: 15px 0;
+  font-size: 1.2rem;
+  border: 2px solid #333;
+  border-radius: 8px;
+  background-color: #1e1e1e;
+  color: #eee;
+  outline: none;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.registerWrapper input:focus {
+  border-color: #555;
+  box-shadow: 0 0 10px rgba(85, 85, 85, 0.6);
+}
+
+.registerWrapper button {
+  width: 100%;
+  margin-left: 20px;
+  padding: 15px;
+  font-size: 2.3rem;
+  font-weight: bold;
+  color: #12d5d8;
+  background: linear-gradient(to right, #444, #222);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.registerWrapper button:hover {
+  background: linear-gradient(to right, #222, #444);
+  transform: scale(1.05);
+}
+
+.registerTitle {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #12d5d8;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.nameFields {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.submitButton {
+  margin-top: 20px;
+}
+
+

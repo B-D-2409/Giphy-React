@@ -1,0 +1,55 @@
+header {
+    display: flex;
+    flex-direction: row;
+    background-color: black;
+    gap: 20px;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    padding: 10px 20px;
+    height: 80px;
+}
+
+header h1 {
+    font-size: 2rem;
+    color: white;
+}
+
+
+header {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.nav-wrapper {
+    position: relative;
+    
+}
+
+.auth-buttons {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    gap: 10px;
+    z-index: 1000;
+    
+}
+
+
+.nav-register{
+  background-image: linear-gradient(to left, #6328c3, #5e149b, #9933ff, #852ea3, #650d5d) !important;
+  color: snow !important;
+  padding: 10px 15px;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: transform 0.2s ease;
+}
+
+.nav-register:hover {
+    transform: scale(1.05);
+}
