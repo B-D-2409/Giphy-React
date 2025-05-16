@@ -4,7 +4,7 @@
     align-items: center;
     justify-content: flex-start;
     padding-top: 50px;
-    
+
 
     width: 1000px;
     height: 900px;
@@ -42,15 +42,15 @@
 
 #createGif input[type="file"],
 .create-container input[type="file"] {
-  background-color: transparent; 
-  border: 1px solid #555;
-  padding: 0.6rem 1rem;
-  border-radius: 10px;
-  width: 100%;
-  max-width: 600px;
-  color: #ccc;
-  cursor: pointer;
-  transition: border-color 0.3s;
+    background-color: transparent;
+    border: 1px solid #555;
+    padding: 0.6rem 1rem;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 600px;
+    color: #ccc;
+    cursor: pointer;
+    transition: border-color 0.3s;
 }
 
 .create-container input[type="file"]:hover {
@@ -241,4 +241,8 @@ input[type='file']::file-selector-button {
 
 .create-container p {
     color: white;
+}
+
+.no-files  {
+    color: #ffffff;
 }

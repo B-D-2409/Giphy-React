@@ -110,7 +110,7 @@ function App() {
           <Route path="/Menu" element={<Authenticated><Menu/></Authenticated>} />
           <Route path='/Help' element={<Help  />} />
           <Route path="/faq" element={<Faq />} />
-          <Route path='/profile' element={<Profile/>} />
+          <Route path='/profile' element={<Authenticated><Profile gifs={gifs}/></Authenticated>} />
           <Route path='/Upload' element={<Authenticated><Upload gifs={gifs}/></Authenticated>} />
           <Route path="/Create" element={<Authenticated><Create gifs={gifs}/></Authenticated>} />
           <Route path="/favorites" element={<Authenticated><Favorites gifs={gifs}/></Authenticated>} />

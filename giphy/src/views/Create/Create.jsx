@@ -158,7 +158,7 @@ export default function Create() {
                         })}
                     </>
                 ) : (
-                    <p>No files selected yet.</p>
+                    <p className='no-files'>No files selected yet.</p>
                 )}
 
             </div>
