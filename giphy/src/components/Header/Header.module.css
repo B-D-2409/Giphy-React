@@ -48,6 +48,7 @@ header {
   font-weight: bold;
   text-decoration: none;
   transition: transform 0.2s ease;
+  border: 2px solid transparent;
 }
 
 .nav-register:hover {
