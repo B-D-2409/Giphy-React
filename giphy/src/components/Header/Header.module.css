@@ -26,7 +26,6 @@ header {
 
 .nav-wrapper {
     position: relative;
-
 }
 
 .auth-buttons {
@@ -69,3 +68,57 @@ header {
     margin-right: 35px;
     margin-bottom: 20px;
 }
+
+.nav-wrapper nav a.active {
+    color: #ff4a09;
+    background: #28c4f0; 
+    transition: background-color 0.8s ease, color 0.8s ease; 
+  }
+
+
+  
+  .logo {
+    height: 6em;
+    padding: 1.5em;
+    will-change: filter;
+    transition: filter 300ms;
+  }
+  
+  .logo:hover {
+    filter: drop-shadow(0 0 2em #0a107aaa);
+  }
+  .logo.react:hover {
+    filter: drop-shadow(0 0 2em #61dafbaa);
+  }
+  @keyframes logo-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  @media (prefers-reduced-motion: no-preference) {
+    a:nth-of-type(2) .logo {
+      animation: logo-spin infinite 20s linear;
+    }
+  }
+
+  .logo-container {
+    display: flex;
+    align-items: center;
+    gap: 5px; 
+  }
+  
+  .logo-container > img {
+    width: 80px;
+  }
+  
+  .logo-container > a {
+    font-size: 2.5rem;
+    color: white;
+    text-decoration: none;
+    font-family: "Montserrat", "sans-serif";
+  }
+  

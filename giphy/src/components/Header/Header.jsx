@@ -76,10 +76,6 @@ export default function Header() {
                             </Menu>
                         </div>
 
-
-
-
-
                         <NavLink
                             to='/upload'
                             className={({ isActive }) => (isActive ? "active" : "upload")}
