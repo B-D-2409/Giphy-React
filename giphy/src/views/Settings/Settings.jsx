@@ -4,13 +4,13 @@ import EmailPreferences from './EmailPreferences';
 import styles from './Settings.module.css';
 
 export default function Settings() {
-  const { t } = useTranslation();
+    const { t } = useTranslation();
 
-  return (
-    <div className={styles[`settings-container`]}>
-      <h1>{t(styles[`settings.title`])}</h1>
-      <LanguageSelector />
-      <EmailPreferences />
-    </div>
-  );
+    return (
+        <div className={styles[`settings-container`]}>
+            <h1>{t(styles[`settings.title`])}</h1>
+            <LanguageSelector />
+            <EmailPreferences />
+        </div>
+    );
 }
