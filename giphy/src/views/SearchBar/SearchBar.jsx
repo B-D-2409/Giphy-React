@@ -33,10 +33,15 @@ export function SearchBar({ onResults }) {
 
     useEffect(() => {
 
-        if (searchBar.trim() === '') {
-            resetToDefaultGifs()
-        }
+        const delayDebounce = setTimeout(() => {
+            if(searchBar.trim()) {
+                handleSearch();
+            }else{
+                resetToDefaultGifs();
+            }
+        },0)
 
+        return (() => {clearTimeout(delayDebounce)})
     }, [searchBar])
 
 
