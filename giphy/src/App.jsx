@@ -13,7 +13,7 @@ import { SearchBar } from './views/SearchBar/SearchBar';
 import { useState,useEffect } from 'react';
 import { AppContext } from './services/state/AppContext';
 import Register from './components/register/Register';
-import Login from './views/Login/Login';
+import Login from './components/Login/Login';
 import Authenticated from './components/hoc/authentication';
 import { onAuthStateChanged } from 'firebase/auth';
 import { auth } from './config/firebase.config';

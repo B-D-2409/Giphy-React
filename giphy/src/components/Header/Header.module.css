@@ -26,7 +26,7 @@ header {
 
 .nav-wrapper {
     position: relative;
-    
+
 }
 
 .auth-buttons {
@@ -34,23 +34,38 @@ header {
     top: 20px;
     right: 20px;
     display: flex;
-    gap: 10px;
+    gap: 0px;
     z-index: 1000;
-    
+
 }
 
 
-.nav-register{
-  background-image: linear-gradient(to left, #6328c3, #5e149b, #9933ff, #852ea3, #650d5d) !important;
-  color: snow !important;
-  padding: 10px 15px;
-  border-radius: 8px;
-  font-weight: bold;
-  text-decoration: none;
-  transition: transform 0.2s ease;
-  border: 2px solid transparent;
+.nav-register {
+    background-image: linear-gradient(to left, #6328c3, #5e149b, #9933ff, #852ea3, #650d5d) !important;
+    color: snow !important;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: transform 0.2s ease;
+    border: 2px solid transparent;
+    margin-right: 25px;
+    margin-bottom: 20px;
 }
 
 .nav-register:hover {
     transform: scale(1.05);
+}
+
+.nav-login{
+    background-image: linear-gradient(to left, #6328c3, #5e149b, #9933ff, #852ea3, #650d5d) !important;
+    color: snow !important;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: transform 0.2s ease;
+    border: 2px solid transparent;
+    margin-right: 35px;
+    margin-bottom: 20px;
 }

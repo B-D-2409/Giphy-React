@@ -2,7 +2,7 @@ import { useContext, useState } from "react";
 import { AppContext } from "../../services/state/AppContext";
 import { loginUser } from "../../services/auth.service";
 import { useNavigate, useLocation } from "react-router-dom"; 
-
+import styles from './Login.module.css';
 export default function Login() {
     const navigate = useNavigate();
     const location = useLocation(); 
@@ -45,34 +45,34 @@ export default function Login() {
     };
 
     return (
-        <div className="login-container">
-            <h1>Login</h1>
+        <div className={styles['login-container']}>
+            <h1 className={styles['login-title']}>Login</h1>
 
-            <form onSubmit={login}>
-                <div>
-                    <label htmlFor="email">Email </label>
+            <form onSubmit={login} className={styles['login-form']}>
+                <div className={styles['form-group']}>
+                    <label htmlFor="email">Email</label>
                     <input
                         value={user.email}
                         onChange={updateUser('email')}
                         type="email"
                         name="email"
                         id="email"
+                        className={styles['login-input']}
                     />
                 </div>
-                <div>
-                    <label htmlFor="password">Password </label>
+                <div className={styles['form-group']}>
+                    <label htmlFor="password">Password</label>
                     <input
                         value={user.password}
                         onChange={updateUser('password')}
                         type="password"
                         name="password"
                         id="password"
+                        className={styles['login-input']}
                     />
                 </div>
-                <div>
-                    <div className="login-submit">
-                    <button type="submit">Login</button>
-                    </div>
+                <div className={styles['login-submit']}>
+                    <button type="submit" className={styles['login-button']}>Login</button>
                 </div>
             </form>
         </div>
