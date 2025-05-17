@@ -30,12 +30,10 @@ header {
 
 .auth-buttons {
     position: absolute;
-    top: 20px;
-    right: 20px;
+    top: 30px;
+    right: 10px;
     display: flex;
-    gap: 0px;
     z-index: 1000;
-
 }
 
 
@@ -51,6 +49,8 @@ header {
     margin-right: 25px;
     margin-bottom: 20px;
 }
+
+
 
 .nav-register:hover {
     transform: scale(1.05);
@@ -228,3 +228,5 @@ header {
     background: linear-gradient(to right, #6328c3, #5e149b, #9933ff, #852ea3, #650d5d);
     border-radius: 2px;
 }
+
+
