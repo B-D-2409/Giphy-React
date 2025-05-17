@@ -102,23 +102,6 @@ nav a:hover {
   color: white;
 }
 
-.more-options-button {
-  background: none;
-  border: none;
-  font-size: 2rem;
-  color: rgb(206, 22, 120);
-  cursor: pointer;
-  padding: 5px;
-  border-radius: 50%;
-  transition: background-color 0.3s ease;
-  margin-left: -20px;
-}
-
-
-.more-options-button:hover {
-  background-color: rgba(120, 41, 188, 0.8);
-}
-
 
 
 
@@ -184,27 +167,6 @@ nav a {
   padding: 12px 25px; 
   border-radius: 15px; 
 }
-
-
-
-.more-options-button {
-  background: none;
-  border: none;
-  font-size: 2.5rem; 
-  color: rgb(206, 22, 190);
-  cursor: pointer;
-  padding: 10px 15px; 
-  border-radius: 10px; 
-  transition: background-color 0.3s ease;
-  margin-left: -20px;
-}
-
-
-.more-options-button:hover {
-  background-color: transparent;
-}
-
-
 
 .more-options-wrapper {
   position: relative; 

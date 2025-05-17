@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import InfiniteGifScroll from "../../components/infinite-scroll/InfiniteScroll";
 import { useNavigate } from 'react-router-dom';
-
+import styles from './Trending.module.css';
 export default function Trending({ gifs }) {
     const [trendingGifs, setTrendingGifs] = useState([]);
     const navigate = useNavigate();
@@ -30,14 +30,14 @@ export default function Trending({ gifs }) {
     return (
         <div>
             <h2>{gifs.length > 0 ? 'Search Results' : 'Trending GIFs'}</h2>
-            <div className="trending-container">
+            <div className={styles["trending-container"]}>
                 {displayGifs.length === 0 ? (
                     <p>No results found. Please search for GIFs.</p>
                 ) : (
                     <>
                         {displayGifs.map((gif) => (
                             <div
-                                className="trending-gif"
+                                className={styles["trending-gif"]}
                                 key={gif.id}
                                 onClick={() => navigate(`/single-gif/${gif.id}`)} 
                                 style={{ cursor: 'pointer' }} 
