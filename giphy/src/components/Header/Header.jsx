@@ -6,6 +6,7 @@ import Menu from "../../views/Menu/Menu";
 import Profile from "../../views/Profile/Profile";
 import Settings from "../../views/Settings/Settings";
 import style from './Header.module.css';
+
 export default function Header() {
     const { user, userData, setAppState } = useContext(AppContext);
     const navigate = useNavigate();
