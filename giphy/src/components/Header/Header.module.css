@@ -38,8 +38,8 @@ header {
 
 
 .nav-register {
-    background-image: linear-gradient(to left, #6328c3, #5e149b, #9933ff, #852ea3, #650d5d) !important;
-    color: snow !important;
+    color: #12d5d8;
+    background: linear-gradient(to right, #444, #222);
     padding: 10px 15px;
     border-radius: 8px;
     font-weight: bold;
@@ -57,8 +57,8 @@ header {
 }
 
 .nav-login {
-    background-image: linear-gradient(to left, #6328c3, #5e149b, #9933ff, #852ea3, #650d5d) !important;
-    color: snow !important;
+    color: #12d5d8;
+    background: linear-gradient(to right, #444, #222);
     padding: 10px 15px;
     border-radius: 8px;
     font-weight: bold;
