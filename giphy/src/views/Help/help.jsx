@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom"
-import Faq from "./Faq"
 export default function Help() {
 
     return (
