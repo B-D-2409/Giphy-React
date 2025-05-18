@@ -47,13 +47,6 @@
 }
 
 
-.reactions-head, .sports-head, .entertainment-head, .stickers-head, .artists-head, .upload, .create, .login, .favorites{
-  font-size: 0.8rem;
-  color: #fff;
-  text-align: center;
-  margin: 0;
-}
-
 
 nav {
   display: flex;
@@ -101,64 +94,6 @@ nav a:hover {
   background-color: #646cff;
   color: white;
 }
-
-
-
-
-.reactions-head, .sports-head, .entertainment-head, .stickers-head, .artists-head, .upload, .create {
-  position: relative;
-  padding-bottom: 10px;
-  
-}
-
-.reactions-head::after, .sports-head::after, .entertainment-head::after, 
-.stickers-head::after, .artists-head::after, .upload::after, .create::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 5px; 
-  background: linear-gradient(to right, #6328c3, #5e149b, #9933ff, #852ea3, #650d5d); 
-}
-
-.reactions-head::after {
-  background-color: #6328c3; 
-}
-
-.sports-head::after {
-  background-color: #9b1492; 
-}
-
-.entertainment-head::after {
-  background-color: #650d5d;
-}
-
-.stickers-head::after {
-  background-color: #852ea3; 
-}
-
-.artists-head::after {
-  background-color: #9933ff; 
-}
-
-
-.upload::after {
-  background-color: #28a745;  
-}
-
-.create::after {
-  background-color: #218838;  
-}
-
-.upload, .create {
-  color: #9933ff;
-  background: linear-gradient(to right, #28a745, #ffc107); 
-  -webkit-background-clip: text; 
-  -webkit-text-fill-color: transparent; 
-  background-clip: text; 
-}
-
 
 nav a {
   color: white;
@@ -257,35 +192,6 @@ nav a {
 
 
 
-.trending-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-  padding: 20px;
-  margin-top: 55px;
-}
-
-
-.trending-gif {
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  transition: transform 0.3s ease;
-  cursor: pointer;
-}
-
-.trending-gif img {
-  border-radius: 10px;
-  width: 200px;
-  height: 200px;
-  object-fit: cover;
-}
-
-.trending-gif:hover {
-  transform: scale(1.05);
-}
-
 
 h2 {
   text-align: center;
@@ -294,143 +200,10 @@ h2 {
   color: #333;
 }
 
-.upload {
-  color: #9933ff;
-  background: linear-gradient(to right, #28a745, #ffc107); 
-  -webkit-background-clip: text; 
-  -webkit-text-fill-color: transparent; 
-  background-clip: text; 
-}
 
-.create {
-  color: #9933ff;
-  background: linear-gradient(to right, #28a745, #ffc107); 
-  -webkit-background-clip: text; 
-  -webkit-text-fill-color: transparent; 
-  background-clip: text; 
-}
 
-.artists-head {
-  background: linear-gradient(to right, #28a745, #ffc107); 
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  color: transparent;
-}
 
-.entertainment-head {
-  background: linear-gradient(to right, #28a745, #ffc107); 
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  color: transparent;
-}
 
-.sports-head {
-  background: linear-gradient(to right, #28a745, #ffc107); 
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  color: transparent;
-}
-
-.stickers-head {
-  background: linear-gradient(to right, #28a745, #ffc107); 
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  color: transparent;
-}
-
-.reactions-head {
-  background: linear-gradient(to right, #28a745, #ffc107);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  color: transparent;
-}
-
-.upload, .create {
-  background: linear-gradient(to right, #28a745, #ffc107); 
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-background-clip: text;
-  background-clip: text;
-  background-clip: text;
-}
-
-.upload:hover, .create:hover {
-  background: linear-gradient(to right, #9933ff, #3316ed); 
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.artists-head, .entertainment-head, .sports-head, .stickers-head, .reactions-head {
-  background: linear-gradient(to right, #28a745, #ffc107);
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  color: transparent;
-}
-
-.artists-head:hover, .entertainment-head:hover, .sports-head:hover, .stickers-head:hover, .reactions-head:hover {
-  background: linear-gradient(to right, #9933ff, #3316ed); 
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.reactions-container, 
-.sports-container, 
-.entertainment-container, 
-.stickers-container, 
-.artists-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px 20px;
-  justify-content: center;
-  padding: 20px;
-  z-index: 10; 
-  margin-top: 55px;
-  
-}
-
-.reactions-gif, 
-.sports-gif, 
-.entertainment-gif, 
-.stickers-gif, 
-.artists-gif {
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  transition: transform 0.3s ease;
-  cursor: pointer;
-  z-index: 20;
-  
-}
-
-.reactions-gif img, 
-.sports-gif img, 
-.entertainment-gif img, 
-.stickers-gif img, 
-.artists-gif img {
-  border-radius: 10px;
-  width: 200px;
-  height: 200px;
-  object-fit: cover;
-  z-index: 20;
-}
-
-.reactions-gif:hover, 
-.sports-gif:hover, 
-.entertainment-gif:hover, 
-.stickers-gif:hover, 
-.artists-gif:hover {
-  transform: scale(1.1);
-}
 
 
 
@@ -471,95 +244,6 @@ section {
   cursor: pointer;
   margin-right: 80px;
 }
-
-
-
-.upload-container{
-  display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    padding-top: 50px;
-    
-
-    width: 1000px;
-    height: 900px;
-    margin: 147px auto 0 auto;
-
-    background-color: #6157ff;
-    background-image: linear-gradient(to left, #852ea3, #9933ff);
-
-    border-radius: 40px;
-    padding: 20px;
-
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    color: #044387;
-}
-
-.upload-button-container p{
-  color:#044387;
-}
-
-.upload-form h3 {
-  font-size: 2rem;
-  margin-bottom: 15px;
-  color: #044387;
-}
-
-
-.upload-button-container p {
-  font-size: 1.5rem;
-  margin-bottom: 15px;
-}
-
-
-.upload-button-container input[type="file"] {
-  font-size: 1.2rem;
-  padding: 15px;
-  margin: 20px 0;
-  width: 80%;
-  max-width: 500px;
-  border: 2px solid #ccc;
-  border-radius: 8px;
-  color: #044387;
-  
-}
-
-
-.upload-button {
-  font-size: 1.5rem;
-  padding: 12px 25px;
-  background-color: #044387;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.upload-button:hover {
-  background-color: #29b957;
-}
-
-.upload-button-container input[type="file"]::file-selector-button {
-  background: none;
-  border: none;
-  padding: 0;
-  margin: 0;
-  font-size: 1.2rem;
-  font-family: inherit;
-  color:#044387;
-  cursor: pointer;
-  margin-right: 5px;
-  padding-left: 80px;
-  
-}
-
-.upload-container p {
-  color:#044387;
-}
-
-
 
 
 .nav-wrapper nav a.active {

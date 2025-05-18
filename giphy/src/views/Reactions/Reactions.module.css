@@ -1,0 +1,32 @@
+.reactions-container{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px 20px;
+  justify-content: center;
+  padding: 20px;
+  z-index: 10; 
+  margin-top: 55px;
+  
+}
+
+.reactions-gif{
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  z-index: 20;
+  
+}
+
+.reactions-gif img {
+  border-radius: 10px;
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  z-index: 20;
+}
+
+.reactions-gif:hove {
+  transform: scale(1.1);
+}

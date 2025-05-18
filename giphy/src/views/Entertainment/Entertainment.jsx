@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
 import InfiniteGifScroll from "../../components/infinite-scroll/InfiniteScroll";
 import { useNavigate } from "react-router-dom";
+import style from './Entertainment.module.css';
 export default function Entertainment({gifs}) {
     const [entertainmentGifs, setEntertainmentGifs] = useState([]);
     const API_KEY = import.meta.env.VITE_GIPHY_API_KEY;
@@ -28,14 +29,14 @@ export default function Entertainment({gifs}) {
     return (
         <div>
             <h2>{gifs.length > 0 ? 'Search Results' : 'entertainmentGIFs'}</h2>
-            <div className="trending-container">
+            <div className={style[`entertainment-container`]}>
                 {displayGifs.length === 0 ? (
                     <p>No results found. Please search for GIFs.</p>
                 ) : (
                     <>
                         {displayGifs.map((gif) => (
                             <div
-                                className="entertainment-gif"
+                                className={style[`entertainment-gif`]}
                                 key={gif.id}
                                 onClick={() => navigate(`/single-gif/${gif.id}`)} 
                                 style={{ cursor: 'pointer' }} 

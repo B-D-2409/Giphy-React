@@ -1,9 +1,10 @@
 import { useState } from "react"
-export  default function Upload() {
+import styles from "./Upload.module.css";
+export default function Upload() {
     const [upload, setUpload] = useState([]);
 
 
-   const uploadGifs = (e) => {
+    const uploadGifs = (e) => {
         const files = Array.from(e.target.files);
         console.log(`Selected files: ${files}`);
         setUpload(files)
@@ -12,7 +13,7 @@ export  default function Upload() {
     const submitListener = (e) => {
         e.preventDefault();
 
-        if(upload.length === 0) {
+        if (upload.length === 0) {
             return alert(`Please select at least one gif`)
         }
 
@@ -22,20 +23,20 @@ export  default function Upload() {
             alert(`Files uploaded successfully!`);
             setUpload([])
         }, 1000);
-        
+
     }
 
     return (
         <div>
-        
-            <div className="upload-container">
+
+            <div className={styles[`upload-container`]}>
                 <form
-                    className="upload-form"
+                    className={styles[`upload-form`]}
                     encType="multipart/form-data"
                     onSubmit={submitListener}
                 >
                     <h3>Giphy Upload</h3>
-                    <div className="upload-button-container">
+                    <div className={styles[`upload-button-container`]}>
                         <p>Upload a GIF, MP4, MOV, or WebM</p>
                         <input
                             id="file-upload"
@@ -44,11 +45,11 @@ export  default function Upload() {
                             multiple
                             onChange={uploadGifs}
                         />
-                        <button type="submit" className="upload-button">Submit</button>
+                        <button type="submit" className={styles[`upload-button`]}>Submit</button>
                     </div>
                 </form>
-    
-                <div id="uploaded-gifs-container">
+
+                <div id={styles[`uploaded-gifs-container`]}>
                     {upload.length > 0 ? (
                         <>
                             <ul>
@@ -56,13 +57,13 @@ export  default function Upload() {
                                     <li key={index}>{file.name}</li>
                                 ))}
                             </ul>
-                            <div className="uploaded-files-preview">
+                            <div className={styles[`uploaded-files-preview`]}>
                                 {upload.map((file, index) => {
                                     const fileURL = URL.createObjectURL(file);
-    
+
                                     if (file.type.startsWith('image/')) {
                                         return (
-                                            <div key={index} className="preview-item">
+                                            <div key={index} className={styles[`preview-item`]}>
                                                 <img
                                                     src={fileURL}
                                                     alt={file.name}
@@ -72,7 +73,7 @@ export  default function Upload() {
                                         );
                                     } else if (file.type.startsWith('video/')) {
                                         return (
-                                            <div key={index} className="preview-item">
+                                            <div key={index} className={styles[`preview-item`]}>
                                                 <video
                                                     controls
                                                     style={{ maxWidth: '200px', marginTop: '10px' }}
@@ -95,6 +96,6 @@ export  default function Upload() {
             </div>
         </div>
     );
-    
-    
+
+
 }

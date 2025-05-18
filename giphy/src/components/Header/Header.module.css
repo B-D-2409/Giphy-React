@@ -124,109 +124,242 @@ header {
     text-decoration: none;
     font-family: "Montserrat", "sans-serif";
 }
-
-
-.more-options-button {
-    background: none;
-    border: none;
-    font-size: 2rem;
-    color: rgb(206, 22, 120);
-    cursor: pointer;
-    padding: 5px;
-    border-radius: 50%;
-    transition: background-color 0.3s ease;
-    margin-left: -20px;
-}
-
-
-.more-options-button:hover {
-    background-color: rgba(120, 41, 188, 0.8);
-}
-
 .more-options-wrapper {
-    position: relative;
+  position: relative;
 }
 
-
 .more-options-button {
-    background: none;
-    border: none;
-    font-size: 2.5rem;
-    color: rgb(206, 22, 190);
-    cursor: pointer;
-    padding: 10px 15px;
-    border-radius: 10px;
-    transition: background-color 0.3s ease;
-    margin-left: -20px;
+  background: none;
+  border: none;
+  font-size: 2.5rem;
+  color: rgb(206, 22, 190);
+  cursor: pointer;
+  padding: 10px 15px;
+  border-radius: 10px;
+  transition: background-color 0.3s ease;
+  margin-left: -20px;
+
+  position: relative !important;
+  font-size: 24px;
+  padding-bottom: 10px;
+  left: 70%;
+}
+
+.more-options-button::after {
+  content: "";
+  position: absolute !important;
+  bottom: 5px;
+  left: 45%;
+  transform: translateX(-50%);
+  width: 30px;
+  height: 4px;
+  background: linear-gradient(to right, #6328c3, #5e149b, #9933ff, #852ea3, #650d5d);
+  border-radius: 2px;
 }
 
 .more-options-dropdown {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: rgba(0, 0, 0, 0.95);
-    border: 1px solid rgb(206, 22, 190);
-    border-radius: 10px;
-    padding: 10px;
-    z-index: 10000;
-    min-width: 160px;
+  display: none;
+  position: absolute !important;
+  top: 100%;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.95);
+  border: 1px solid rgb(206, 22, 190);
+  border-radius: 10px;
+  padding: 10px;
+  z-index: 10000;
+  min-width: 160px;
 }
 
-
 .more-options-dropdown a {
-    display: block;
-    padding: 8px 12px;
-    color: rgb(255, 255, 255);
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.2s;
+  display: block;
+  padding: 8px 12px;
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.2s;
 }
 
 .more-options-dropdown a:hover {
-    background-color: rgba(104, 10, 167, 0.7);
+  background-color: rgba(104, 10, 167, 0.7);
 }
-
 
 .more-options-wrapper.open .more-options-dropdown {
-    display: block;
+  display: block;
+  left: 0;
+  right: auto;
 }
-
 
 .more-options-wrapper.open .more-options-dropdown {
-    left: 0;
-    right: auto;
+  right: 0;
+  left: auto;
 }
-
-
-.more-options-wrapper.open .more-options-dropdown {
-    right: 0;
-    left: auto;
-}
-
-
-
-.more-options-button {
-    position: relative;
-    background: none;
-    border: none;
-    font-size: 24px;
-    cursor: pointer;
-    padding-bottom: 10px;
-    left: 70%;
-}
-
-
 .more-options-button::after {
+  content: "";
+  position: absolute;
+  bottom: 5px;
+  left: 45%;
+  transform: translateX(-50%);
+  width: 30px;
+  height: 4px;
+  background: linear-gradient(to right, #6328c3, #5e149b, #9933ff, #852ea3, #650d5d);
+  border-radius: 2px;
+}
+
+
+
+
+.artists-head {
+    background: linear-gradient(to right, #28a745, #ffc107); 
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+  }
+  
+  .entertainment-head {
+    background: linear-gradient(to right, #28a745, #ffc107); 
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+  }
+  
+  .sports-head {
+    background: linear-gradient(to right, #28a745, #ffc107); 
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+  }
+  
+  .stickers-head {
+    background: linear-gradient(to right, #28a745, #ffc107); 
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+  }
+  
+  .reactions-head {
+    background: linear-gradient(to right, #28a745, #ffc107);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+  }
+  
+  .upload, .create {
+    background: linear-gradient(to right, #28a745, #ffc107); 
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-background-clip: text;
+    background-clip: text;
+    background-clip: text;
+  }
+  
+  .create:hover {
+    background: linear-gradient(to right, #9933ff, #3316ed); 
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .artists-head, .entertainment-head, .sports-head, .stickers-head, .reactions-head {
+    background: linear-gradient(to right, #28a745, #ffc107);
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+  }
+  
+  .artists-head:hover, .entertainment-head:hover, .sports-head:hover, .stickers-head:hover, .reactions-head:hover {
+    background: linear-gradient(to right, #9933ff, #3316ed); 
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .reactions-head, .sports-head, .entertainment-head, .stickers-head, .artists-head, .upload, .create {
+    position: relative;
+    padding-bottom: 10px;
+    
+  }
+  
+  .reactions-head::after, .sports-head::after, .entertainment-head::after, 
+  .stickers-head::after, .artists-head::after, .upload::after, .create::after {
     content: "";
     position: absolute;
-    bottom: 5px;
-    left: 45%;
-    transform: translateX(-50%);
-    width: 30px;
-    height: 4px;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 5px; 
+    background: linear-gradient(to right, #6328c3, #5e149b, #9933ff, #852ea3, #650d5d); 
+  }
+  
+  .reactions-head::after {
+    background-color: #6328c3; 
+  }
+  
+  .sports-head::after {
+    background-color: #9b1492; 
+  }
+  
+  .entertainment-head::after {
+    background-color: #650d5d;
+  }
+  
+  .stickers-head::after {
+    background-color: #852ea3; 
+  }
+  
+  .artists-head::after {
+    background-color: #9933ff; 
+  }
+
+  .reactions-head, .sports-head, .entertainment-head, .stickers-head, .artists-head, .upload, .create, .login, .favorites{
+    font-size: 0.8rem;
+    color: #fff;
+    text-align: center;
+    margin: 0;
+  }
+  
+  .active {
+    color: #ff4a09;
+    background: #28c4f0;
+    transition: background-color 0.8s ease, color 0.8s ease;
+  }
+  
+
+  .favorites {
+    background: linear-gradient(to right, #28a745, #ffc107);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    position: relative;
+    padding-bottom: 10px;
+    font-size: 0.8rem;
+    text-align: center;
+    margin: 0;
+  }
+  
+  .favorites:hover {
+    background: linear-gradient(to right, #9933ff, #3316ed);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+  
+  .favorites::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 15%;
+    width: 70%;
+    height: 5px;
     background: linear-gradient(to right, #6328c3, #5e149b, #9933ff, #852ea3, #650d5d);
-    border-radius: 2px;
-}
-
-
+  }
+  
