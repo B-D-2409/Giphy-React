@@ -28,7 +28,7 @@ import { getAdminData } from './services/admin.service';
 import { Admin } from './Admin/Admin';
 import Profile from './views/Profile/Profile';
 import Settings from './views/Settings/Settings';
-
+import Collections from './views/Collections/Collections';
 function App() {
   const [gifs, setGifs] = useState([]); 
   const [user, loading, error] = useAuthState(auth);
@@ -120,6 +120,7 @@ function App() {
           <Route path='/login' element={<Login />} />
           <Route path='/register' element={<Register />} />
           <Route path='/admin' element={<Authenticated><Admin /></Authenticated>} />
+          <Route path='/collections' element={<Authenticated><Collections gifs={gifs}/></Authenticated>} />
         </Routes>
       </AppContext.Provider>
     </BrowserRouter>

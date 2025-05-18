@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { addGifToFavorites } from '../../services/users.service';
+import { addGifToFavorites, addToCollections } from '../../services/users.service';
 import './SingleGif.css';
 export default function SingleGif() {
     const { id } = useParams();
@@ -8,6 +8,8 @@ export default function SingleGif() {
     const [isFavorite, setIsFavorite] = useState(false);
     const [isCopied, setIsCopied] = useState(false);
     const [isDownloaded, setIsDownloaded] = useState(false);
+
+    const [isCollection, setIsCollection] = useState(false);
 
 
     const API_KEY = import.meta.env.VITE_GIPHY_API_KEY;
@@ -67,6 +69,15 @@ export default function SingleGif() {
         }
     };
 
+    const handleCollections = async () => {
+        try {
+            await addToCollections(single);
+            setIsCollection(true);
+        } catch (error) {
+            console.error("Error with add collection gif:", error);
+        }
+    }
+
 
 
     if (!single || !single.images) return <p>Loading...</p>;
@@ -95,6 +106,12 @@ export default function SingleGif() {
                     <button id="downloaded" onClick={handleDownload}>
                         {isDownloaded ?  'Downloaded' : 'Download'}
                     
+                    </button>
+
+
+                    <button id="collections-btn" onClick={handleCollections}>
+                        {isCollection ? 'Collected' : 'Add to Collection'}
+
                     </button>
                 </div>
             </div>

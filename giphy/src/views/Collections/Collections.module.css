@@ -1,0 +1,85 @@
+.collections-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+    padding: 20px;
+    margin-top: 130px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+  }
+  
+  .collections {
+    background: linear-gradient(to right, #28a745, #ffc107);
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    padding-bottom: 0px;
+  }
+  
+  .collections:hover {
+    background: linear-gradient(to right, #9933ff, #3316ed); 
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .collections::after {
+    content: "";
+    display: block;
+    position: relative;
+    width: 160%;
+    left: -20px;
+    height: 5px;
+    margin-top: 5px;
+    background: linear-gradient(to right, #6328c3, #5e149b, #9933ff, #852ea3, #650d5d); 
+  }
+  
+  .collections-gif {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    background-color: #24dbf3;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .collections-gif img {
+    border-radius: 10px;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+  
+  .collections-gif img:hover {
+    transform: scale(1.05);
+  }
+  
+
+  .collections-gif button {
+    padding: 6px 12px;
+    border: none;
+    border-radius: 8px;
+    background-image: linear-gradient(to left, #7c057c, #852ea3);
+    color: #ff4a09;
+    font-size: 14px; 
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.5s ease, transform 0.15s ease;
+    width: 100%;
+    max-width: 160px;
+    border: 1px solid black;
+  }
+  
+  .collections-gif button:hover {
+    background-image: linear-gradient(to left, #6328c3, #5e149b, #9933ff, #852ea3, #650d5d);
+    transform: scale(1.05);
+  }
+  

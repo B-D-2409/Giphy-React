@@ -64,3 +64,25 @@ export const getProfileData = async (uid,firstName,lastName) => {
         })
     }
 }
+
+export const addToCollections = async (gif) => {
+    const userId = getAuth().currentUser?.uid;
+    if (!userId) throw new Error("User not authenticated");
+
+    await set(ref(db, `collections/${userId}/${gif.id}`), gif);
+};
+
+export const getCollections = async () => {
+    const userId = getAuth().currentUser?.uid;
+    if (!userId) return [];
+
+    const snapshot = await get(ref(db, `collections/${userId}`));
+    return snapshot.exists() ? Object.values(snapshot.val()) : [];
+};
+
+export const deleteCollectionsGif = async (gifId) => {
+    const userId = getAuth().currentUser?.uid;
+    if (!userId) throw new Error("User not authenticated");
+
+    await remove(ref(db, `collections/${userId}/${gifId}`));
+};
