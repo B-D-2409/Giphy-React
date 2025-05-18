@@ -363,3 +363,15 @@ header {
     background: linear-gradient(to right, #6328c3, #5e149b, #9933ff, #852ea3, #650d5d);
   }
   
+
+.logout{
+  display: flex;
+  align-items: center;
+  background-image: linear-gradient(to left, #6328c3, #5e149b, #9933ff, #852ea3, #650d5d);
+  color: snow;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-right: 80px;
+}

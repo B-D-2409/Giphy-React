@@ -99,8 +99,8 @@ export default function Header() {
                         <NavLink to="/admin" className="admin-link">Admin</NavLink>
                     )}
                 </nav>
-                {user && <button className="logout" onClick={logout}>Logout</button>}
-                {userData && <span className="welcome"></span>}
+                {user && <button className={style[`logout`]} onClick={logout}>Logout</button>}
+                {userData && <span className={style[`welcome`]}></span>}
             </div>
         </header>
     );
