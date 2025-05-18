@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Search } from 'lucide-react';
-
+import styles from './SearchBar.module.css';
 export function SearchBar({ onResults }) {
     const [searchBar, setSearchBar] = useState('');
 
@@ -46,7 +46,7 @@ export function SearchBar({ onResults }) {
 
 
     return (
-        <div className='search-bar'>
+        <div className={styles[`search-bar`]}>
             <input
                 type='text'
                 placeholder="Search all the GIFs and Stickers..."
@@ -58,7 +58,7 @@ export function SearchBar({ onResults }) {
                     }
                 }}
             />
-            <button className='search-button' onClick={handleSearch}>
+            <button className={styles[`search-button`]} onClick={handleSearch}>
                 <Search size={24} />
             </button>
         </div>
