@@ -6,6 +6,7 @@ import Menu from "../../views/Menu/Menu";
 import Profile from "../../views/Profile/Profile";
 import Settings from "../../views/Settings/Settings";
 import style from './Header.module.css';
+import SideBar from "../../views/SideBar/SideBar";
 
 export default function Header() {
     const { user, userData, setAppState } = useContext(AppContext);
@@ -33,7 +34,7 @@ export default function Header() {
                         src="https://cdn.freelogovectors.net/wp-content/uploads/2021/01/giphy_logo_icon-freelogovectors.net_.png"
                         alt="Giphy Logo"
                     />
-                    <a href="/">Giphy</a>
+                    <NavLink to="/">Giphy</NavLink>
                 </div>
                 <nav>
                     <NavLink
@@ -66,6 +67,7 @@ export default function Header() {
                     >
                         Artists
                     </NavLink>
+
                     <div className={style["more-options-wrapper"]}>
                         <Menu>
                             <Profile />
@@ -91,26 +93,21 @@ export default function Header() {
                     >
                         Favorites
                     </NavLink>
-                    <NavLink
-                        to="/collections"
-                        className={({ isActive }) =>
-                            `${style.collections} ${isActive ? style.active : ''}`
-                        }
-                    >
-                        Collections
-                    </NavLink>
+
+            
 
                     <div className={style['auth-buttons']}>
                         {!user && <NavLink to="/register" className={style['nav-register']}>Register</NavLink>}
                         {!user && <NavLink to="/login" className={style['nav-login']}>Login</NavLink>}
                     </div>
-                    {userData?.isAdmin && (
+                    {user && userData?.isAdmin && (
                         <NavLink to="/admin" className="admin-link">Admin</NavLink>
                     )}
+                    
                 </nav>
-                {user && <button className={style[`logout`]} onClick={logout}>Logout</button>}
-                {userData && <span className={style[`welcome`]}></span>}
-            </div>
+                </div>
+                {user &&  <SideBar />}
+        
         </header>
     );
 }

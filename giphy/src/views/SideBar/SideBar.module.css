@@ -1,0 +1,63 @@
+.side-bar-container {
+    position: relative;
+    display: inline-block;
+    user-select: none;
+    margin-right: 20px;
+}
+
+.menu-button {
+    display: flex;
+    align-items: center;
+    background-color: #3e3e3e;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    color: white;
+    gap: 10px;
+    font-weight: 600;
+}
+
+.menu-button:hover {
+    background-color: #505050;
+}
+
+.avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+}
+
+.username {
+    font-size: 14px;
+}
+
+.caret {
+    font-size: 12px;
+}
+
+
+.side-bar-dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #333;
+    border-radius: 6px;
+    margin-top: 6px;
+    min-width: 140px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+}
+
+.side-bar-dropdown a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    transition: background-color 0.2s ease;
+}
+
+.side-bar-dropdown a:hover {
+    background-color: #444;
+}
