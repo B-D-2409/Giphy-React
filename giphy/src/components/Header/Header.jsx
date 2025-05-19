@@ -93,10 +93,13 @@ export default function Header() {
                     </NavLink>
                     <NavLink
                         to="/collections"
-                        className={({ isActive }) => (isActive ? style.active : style.collections)}
+                        className={({ isActive }) =>
+                            `${style.collections} ${isActive ? style.active : ''}`
+                        }
                     >
                         Collections
                     </NavLink>
+
                     <div className={style['auth-buttons']}>
                         {!user && <NavLink to="/register" className={style['nav-register']}>Register</NavLink>}
                         {!user && <NavLink to="/login" className={style['nav-login']}>Login</NavLink>}
