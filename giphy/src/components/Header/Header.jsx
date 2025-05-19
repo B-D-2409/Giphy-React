@@ -67,11 +67,11 @@ export default function Header() {
                         Artists
                     </NavLink>
                     <div className={style["more-options-wrapper"]}>
-    <Menu>
-        <Profile />
-        <Settings />
-    </Menu>
-</div>
+                        <Menu>
+                            <Profile />
+                            <Settings />
+                        </Menu>
+                    </div>
 
                     <NavLink
                         to="/upload"
