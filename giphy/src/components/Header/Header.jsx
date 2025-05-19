@@ -106,6 +106,7 @@ export default function Header() {
                     
                 </nav>
                 </div>
+                
                 {user &&  <SideBar />}
         
         </header>

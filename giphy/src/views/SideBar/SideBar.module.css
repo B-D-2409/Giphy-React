@@ -8,7 +8,7 @@
 .menu-button {
     display: flex;
     align-items: center;
-    background-color: #3e3e3e;
+    background-color: #a95af3;
     border: none;
     padding: 8px 15px;
     border-radius: 6px;
@@ -19,7 +19,7 @@
 }
 
 .menu-button:hover {
-    background-color: #505050;
+    background-color: #645af7;
 }
 
 .avatar {
@@ -41,7 +41,7 @@
     position: absolute;
     top: 100%;
     right: 0;
-    background-color: #333;
+    background-color: #a95af3;
     border-radius: 6px;
     margin-top: 6px;
     min-width: 140px;
