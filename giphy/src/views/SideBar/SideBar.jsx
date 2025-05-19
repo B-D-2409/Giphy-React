@@ -5,7 +5,7 @@ import { NavLink } from 'react-router-dom';
 import { logoutUser } from "../../services/auth.service";
 export default function SideBar() {
     const [isOpen, setIsOpen] = useState(false);
-    const {user} = useContext(AppContext);
+    const {user, userData} = useContext(AppContext);
 
     const toggleMenu = () => {
         setIsOpen(!isOpen);
@@ -33,7 +33,7 @@ export default function SideBar() {
                     alt="User Avatar"
                     className={style.avatar}
                 />
-                <span className={style.username}>{user?.firsName || 'Guest'}</span>
+                <span className={style.username}>{userData.handle || 'Guest'}</span>
                 <i className={`fa-solid fa-caret-down ${style.caret}`}></i>
             </button>
 
