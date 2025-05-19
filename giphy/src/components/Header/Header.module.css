@@ -326,8 +326,8 @@ header {
   }
   
   .active {
-    color: #ff4a09;
-    background: #28c4f0;
+    color: #ff4a09 !important;
+    background: #28c4f0 !important;
     transition: background-color 0.8s ease, color 0.8s ease;
   }
   
