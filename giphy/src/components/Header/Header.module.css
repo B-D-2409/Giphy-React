@@ -46,7 +46,7 @@ header {
     text-decoration: none;
     transition: transform 0.2s ease;
     border: 2px solid transparent;
-    margin-right: 25px;
+    margin-right: 2px;
     margin-bottom: 20px;
 }
 
@@ -355,6 +355,7 @@ header {
     font-size: 0.8rem;
     text-align: center;
     margin: 0;
+    left: -1%;
   }
   
   .favorites:hover {

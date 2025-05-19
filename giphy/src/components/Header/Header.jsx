@@ -10,21 +10,7 @@ import SideBar from "../../views/SideBar/SideBar";
 
 export default function Header() {
     const { user, userData, setAppState } = useContext(AppContext);
-    const navigate = useNavigate();
-
-    const logout = () => {
-        logoutUser()
-            .then(() => {
-                setAppState({
-                    user: null,
-                    userData: null
-                });
-                navigate('/login');
-            })
-            .catch((error) => {
-                console.error("Logout failed:", error);
-            });
-    };
+   
 
     return (
         <header>
@@ -106,7 +92,7 @@ export default function Header() {
                     
                 </nav>
                 </div>
-                
+
                 {user &&  <SideBar />}
         
         </header>
