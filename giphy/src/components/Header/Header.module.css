@@ -324,12 +324,24 @@ header {
     text-align: center;
     margin: 0;
   }
+  .collections {
+    margin-left: auto;
+    margin-bottom: -100px;
+    margin-right: -130px;
+    padding: 8px 16px;
+    text-decoration: none;
+    color: #fbfbfb;
+    background-image: linear-gradient(to left, #6328c3, #5e149b, #9933ff, #852ea3, #650d5d);
+    display: inline-block; /* за стабилна ширина */
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
   
   .active {
     color: #ff4a09 !important;
     background: #28c4f0 !important;
-    transition: background-color 0.8s ease, color 0.8s ease;
+    font-weight: bold;
   }
+  
   
 
   .favorites {
@@ -374,16 +386,6 @@ header {
   border-radius: 6px;
   cursor: pointer;
   margin-right: 80px;
-}
-/* В Collections.module.css */
-.collections {
-  margin-left: auto;
-  margin-bottom: -100px;
-  margin-right: -130px;
-  padding: 8px 16px;
-  text-decoration: none;
-  color: #fbfbfb;
-  background-image: linear-gradient(to left, #6328c3, #5e149b, #9933ff, #852ea3, #650d5d);
 }
 
 .active {
