@@ -2,7 +2,7 @@ import { useState, useEffect } from "react"
 import InfiniteGifScroll from "../../components/infinite-scroll/InfiniteScroll";
 import { useNavigate } from "react-router-dom";
 import style from './Reactions.module.css';
-export default function Reactions({gifs}) {
+export default function Reactions({ gifs }) {
     const [reactionsGifs, setReactionsGifs] = useState([]);
     const API_KEY = import.meta.env.VITE_GIPHY_API_KEY;
     const navigate = useNavigate();
@@ -21,7 +21,7 @@ export default function Reactions({gifs}) {
             }
         }
 
-        if(gifs.length === 0) {
+        if (gifs.length === 0) {
             fetchReactionsGifs()
         }
 
@@ -40,15 +40,16 @@ export default function Reactions({gifs}) {
                             <div
                                 className={style[`reactions-gif`]}
                                 key={gif.id}
-                                onClick={() => navigate(`/single-gif/${gif.id}`)} 
-                                style={{ cursor: 'pointer' }} 
+                                onClick={() => navigate(`/single-gif/${gif.id}`)}
+                                style={{ cursor: 'pointer' }}
                             >
                                 <img
-                                    src={gif.images.fixed_height}
+                                    src={gif.images.fixed_height.url}
                                     alt={gif.title}
                                 />
                             </div>
                         ))}
+
                         <InfiniteGifScroll category="reactions" />
                     </>
                 )}
