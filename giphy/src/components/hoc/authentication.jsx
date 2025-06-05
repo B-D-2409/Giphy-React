@@ -8,16 +8,16 @@ export default function Authenticated({ children }) {
     const { user } = useContext(AppContext);
     const location = useLocation();
 
- 
-    
+
+
     if (!user) {
-    
+
         return <Navigate to="/login" replace state={{ from: location }} />;
     }
 
     if (!user.emailVerified) {
-        return <Verify />; 
-      }
+        return <Verify />;
+    }
 
     return <>{children}</>;
 }
