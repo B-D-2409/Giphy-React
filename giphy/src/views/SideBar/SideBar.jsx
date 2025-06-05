@@ -39,14 +39,14 @@ export default function SideBar() {
 
             {isOpen && (
                 <nav className={style['side-bar-dropdown']}>
-                    <NavLink
+                    {/* <NavLink
                         to="/collections"
                         className={({ isActive }) =>
                             `${style.collections} ${isActive ? style.active : ''}`
                         }
                     >
                         Collections
-                    </NavLink>
+                    </NavLink> */}
                     {user && <button className={style.logout} onClick={logout}>Logout</button>}
                 </nav>
             )}
