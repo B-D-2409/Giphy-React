@@ -44,7 +44,7 @@ export default function Reactions({gifs}) {
                                 style={{ cursor: 'pointer' }} 
                             >
                                 <img
-                                    src={gif.images.fixed_height.url}
+                                    src={gif.images.fixed_height}
                                     alt={gif.title}
                                 />
                             </div>

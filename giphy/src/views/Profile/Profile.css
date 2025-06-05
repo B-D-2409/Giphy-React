@@ -13,7 +13,7 @@
     padding: 40px;
 }
 
-/* Заглавие */
+
 .profile-container h1 {
     font-size: 3rem;
     font-weight: bold;
@@ -22,7 +22,7 @@
     margin-bottom: 20px;
 }
 
-/* Статичен изглед */
+
 .profile-info {
     text-align: center;
     margin-bottom: 20px;
@@ -58,14 +58,13 @@
     transform: scale(1.05);
 }
 
-/* Формата за редакция */
+
 .profile-edit {
     max-width: 100%;
     margin: 0 auto;
     padding: 25px 0;
 }
 
-/* Полета за въвеждане */
 .profile-edit input {
     width: 100%;
     padding: 15px;
@@ -84,7 +83,7 @@
     box-shadow: 0 0 10px rgba(85, 85, 85, 0.6);
 }
 
-/* Бутоните Save и Cancel */
+
 .profile-edit-buttons {
     display: flex;
     justify-content: space-between;

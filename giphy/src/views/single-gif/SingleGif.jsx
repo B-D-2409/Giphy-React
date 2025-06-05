@@ -4,7 +4,7 @@ import { addGifToFavorites, addToCollections } from '../../services/users.servic
 import './SingleGif.css';
 export default function SingleGif() {
     const { id } = useParams();
-    const [single, setSingle] = useState(null); 
+    const [single, setSingle] = useState(null);
     const [isFavorite, setIsFavorite] = useState(false);
     const [isCopied, setIsCopied] = useState(false);
     const [isDownloaded, setIsDownloaded] = useState(false);
@@ -22,7 +22,7 @@ export default function SingleGif() {
                 const data = await response.json();
                 setSingle(data.data);
             } catch (error) {
-                console.error('Fetch error',error);
+                console.error('Fetch error', error);
             }
         };
 
@@ -38,12 +38,12 @@ export default function SingleGif() {
         }
     }
 
-   const handleCopyLink = () => {
+    const handleCopyLink = () => {
         const link = single?.images?.original?.url || '';
         navigator.clipboard.writeText(link)
             .then(() => {
                 setIsCopied(true);
-    
+
             })
             .catch((error) => {
                 console.error("Error copying link:", error);
@@ -54,7 +54,7 @@ export default function SingleGif() {
         try {
             const response = await fetch(single.images.original.url);
             const blob = await response.blob();
-    
+
             const url = URL.createObjectURL(blob);
             const a = document.createElement('a');
             a.href = url;
@@ -88,11 +88,11 @@ export default function SingleGif() {
                 <h1>{single.title}</h1>
                 <p className="username">{single.username || "Unknown"}</p>
             </div>
-    
+
             <div className="gif-center">
                 <img src={single.images.original.url} alt={single.title} />
             </div>
-    
+
             <div className="gif-side actions">
                 <div className="gif-detail-actions">
                     <button id="favorite-btn" onClick={handleFavorite}>
@@ -101,11 +101,11 @@ export default function SingleGif() {
                     </button>
                     <button id="copy-link-btn" onClick={handleCopyLink}>
                         {isCopied ? 'Copied' : 'Copy'}
-                    
+
                     </button>
                     <button id="downloaded" onClick={handleDownload}>
-                        {isDownloaded ?  'Downloaded' : 'Download'}
-                    
+                        {isDownloaded ? 'Downloaded' : 'Download'}
+
                     </button>
 
 
@@ -117,6 +117,6 @@ export default function SingleGif() {
             </div>
         </div>
     );
-    
-    
+
+
 }
