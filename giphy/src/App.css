@@ -173,7 +173,7 @@ nav a {
   font-size: 24px;
   cursor: pointer;
   padding-bottom: 10px;
-  left: 70%;
+  left: 50%;
 }
 
 
@@ -181,7 +181,7 @@ nav a {
   content: "";
   position: absolute;
   bottom: 5px;
-  left: 45%;
+  left: 50%;
   transform: translateX(-50%);
   width: 30px;
   height: 4px;
@@ -361,4 +361,11 @@ nav {
   flex-wrap: wrap;
   gap: 1rem;
   flex: 1;
+}
+
+.nav-wrapper nav {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: relative;
 }

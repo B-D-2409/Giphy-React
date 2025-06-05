@@ -33,7 +33,7 @@ export default function SideBar() {
                     alt="User Avatar"
                     className={style.avatar}
                 />
-                <span className={style.username}>{userData.handle || 'Guest'}</span>
+                <span className={style.username}>{userData?.handle || 'Guest'}</span>
                 <i className={`fa-solid fa-caret-down ${style.caret}`}></i>
             </button>
 

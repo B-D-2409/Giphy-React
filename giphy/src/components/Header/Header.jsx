@@ -10,7 +10,7 @@ import SideBar from "../../views/SideBar/SideBar";
 
 export default function Header() {
     const { user, userData, setAppState } = useContext(AppContext);
-   
+
 
     return (
         <header>
